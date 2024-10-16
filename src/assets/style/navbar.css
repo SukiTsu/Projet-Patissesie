@@ -1,0 +1,60 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #333;
+    height: 60px; /* Hauteur de la navbar */
+}
+
+.navbar-logo img {
+    width: 100px;
+}
+
+/* Style pour le menu centré */
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    height: 100%; /* Pour que les éléments prennent toute la hauteur de la navbar */
+}
+
+.navbar-menu li {
+    margin: 0;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 100%; /* S'étend sur toute la hauteur de la navbar */
+    transition: background-color 0.3s ease; /* Animation fluide */
+}
+
+.navbar-menu a:hover {
+    background-color: #444; /* Change la couleur de fond au survol */
+}
+
+/* Style pour le bouton "Contact" à droite */
+.navbar-contact {
+    height: 100%; /* S'étend également sur toute la hauteur */
+}
+
+.navbar-contact a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 100%;
+    border-left: 1px solid #555; /* Optionnel : séparer le bouton Contact */
+    transition: background-color 0.3s ease;
+}
+
+.navbar-contact a:hover {
+    background-color: #444; /* Même effet au survol */
+}
+
