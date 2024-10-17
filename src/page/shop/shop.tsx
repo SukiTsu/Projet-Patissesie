@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Navbar from "../../components/navbar";
 import dictionaryCake from "./getData";
-import ContainerGroupCake from "../../assets/style/containerGroupCake";
+import ContainerGroupCake from "../../components/containerGroupCake";
 import { ClassCake } from "../../classCake";
+import Footer from "../../components/footer";
 
 const Shop =({}) => {
    /* const idUser = "17841414994500741"
@@ -30,21 +31,16 @@ const Shop =({}) => {
     for (const key in dictionaryCake) {
       if (dictionaryCake[key].length === 0) break
       const tempCake = dictionaryCake[key][0]
-      console.log(key,"   :   " ,dictionaryCake[key])
       const container = <ContainerGroupCake srcImg={tempCake.getImgSrc()} link={key} title={key}/>
       listContainer.push(container)
     }
-
-    let htmlElement = []
-    //for (let i=0;i<mediaUrls.length;i++){
-    //  htmlElement.push(
-    //  <img src={mediaUrls[i]}/>
-    //)
-    //}
     return (
       <div className="shop-page">
         <Navbar/>
-        {listContainer}
+        <div className="all-container">
+          {listContainer}
+        </div>
+        <Footer/>
       </div>
     )
   }

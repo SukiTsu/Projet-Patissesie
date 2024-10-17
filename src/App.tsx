@@ -5,6 +5,7 @@ import Shop from './page/shop/shop';
 import InstagramFeed from './page/shop/shop2';
 import Blog from './page/blog/blog';
 import Contact from './page/contact/contact';
+import ShopCategoryCake from './page/shop/shopCakeCategory';
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/shop/rollcake" element={<ShopCategoryCake categoryCake='rollcake' />} />
+        <Route path="/shop/cakedesign" element={<ShopCategoryCake categoryCake='cakedesign' />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

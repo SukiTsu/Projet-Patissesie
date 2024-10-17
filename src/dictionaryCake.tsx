@@ -8,8 +8,8 @@ interface Dictionary {
   }
 
   const CakeDictionary: Dictionary = {
-    "furi": [],
-    "fanart": []
+    "rollcake": [],
+    "cakedesign": []
   };
 
 export default CakeDictionary

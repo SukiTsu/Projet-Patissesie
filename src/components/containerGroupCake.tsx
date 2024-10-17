@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import '../assets/style/containerGroupCake.css'
 
 /**
  * Affichage des différents groupe des cakes, pour rediriger les utilisateurs vers la page correspondant

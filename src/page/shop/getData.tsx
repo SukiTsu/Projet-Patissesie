@@ -42,21 +42,21 @@ const token = "EAAHiSqxOIusBO3Tg7L1gY46gdFIYPFJtmvIlMkFKbe5tPEFheZBZA5AVHQEPWZBJ
 //const url = `https://graph.facebook.com/v21.0/17841414994500741?fields=business_discovery.username(suukitsuu)%7Bfollowers_count%2Cmedia_count%2Cmedia%7Bid%2Ccomments_count%2Cmedia_url%7D%7D&access_token=${token}`
 //const url =  `https://graph.instagram.com/${idUser}/media?fields=id,caption,media_type,media_url,permalink,timestamp&access_token=${token}`
 
-const url = "https://graph.facebook.com/v21.0/17841414994500741?fields=business_discovery.username(suukitsuu)%7Bmedia%7Bid%2Ccaption%2Cmedia_url%2Cpermalink%2Cchildren%7Bmedia_url%7D%7D%7D&access_token=EAAHiSqxOIusBOZBZBQm5lP5EbPW18QkUWb6mBU4WScMoiHHrfCtOImPXJYXpZALf0Om9WVcZAa8LN5K774scY4f2IWUz84hP5T4MVulWs8x2gxgoDeAZBij5Oax9KUZCN5MBXfMVt48lZA04EZBZAQZARfwN0ajlDuthZAcOGnywupYAFTP3W0ZBNyLsUHVNNkV7kXUwYcZBNNyYnZAhYpb9NXYAZDZD"
-
-
+//const url = "https://graph.facebook.com/v21.0/17841414994500741?fields=business_discovery.username(suukitsuu)%7Bmedia%7Bid%2Ccaption%2Cmedia_url%2Cpermalink%2Cchildren%7Bmedia_url%7D%7D%7D&access_token=EAAHiSqxOIusBOZBZBQm5lP5EbPW18QkUWb6mBU4WScMoiHHrfCtOImPXJYXpZALf0Om9WVcZAa8LN5K774scY4f2IWUz84hP5T4MVulWs8x2gxgoDeAZBij5Oax9KUZCN5MBXfMVt48lZA04EZBZAQZARfwN0ajlDuthZAcOGnywupYAFTP3W0ZBNyLsUHVNNkV7kXUwYcZBNNyYnZAhYpb9NXYAZDZD"
+const url = "https://graph.facebook.com/v21.0/122096825252577148?fields=posts%7Bmessage%2Cfull_picture%7D&access_token=EAAMxJHI6qfABO8bishf7uqKbhUJwrYVCWLQ9rcz2Ska63zBX5NcdE0rvajLbE3lxrycGsDhlwbOxnCvFxsXLEcJpLyBni5q1uTXoLZB1g0arWfeCVIzDXZBMSLvuSW0wpQZArgkXQZAqZB5hocopgEdzLW3AOUx9aoAA6UJiZCg4ZC9oPDZCzBQDdTkWSmROmqT5fCcXn5ZAy3LgAJDw4TBv9NEGutAZDZD"
 fetch(url)
 .then(response => response.json())
 .then(dataInsta => {
-    const globalData = dataInsta.business_discovery.media.data
+  console.log(dataInsta)
+  const globalData = dataInsta.posts.data
+  console.log(globalData)
     //setMediaUrl(globalData.map((media: { media_url: any; }) => media.media_url));
     for (let i=0;i<globalData.length;i++){
-      if (globalData[i].media_url != undefined){
-        const cake = new ClassCake(globalData[i].media_url,globalData[i].caption)
-
+      if (globalData[i].full_picture != undefined && globalData[i].message != undefined){
+        const cake = new ClassCake(globalData[i].full_picture,globalData[i].message)
         //Regarde les #
         for (const key in dictionaryCake) {
-          if (globalData[i].caption.toLowerCase().includes(key.toLowerCase())) {
+          if (globalData[i].message.toLowerCase().includes(key.toLowerCase())) {
             //Le mot est présent dans la chaîne
             cake.setGroup(HASTAG[i])
             dictionaryCake[key].push(cake)
@@ -64,11 +64,10 @@ fetch(url)
           }
         }
       }else{
-        console.log("probleme de lien")
+        console.log("probleme de lien ou de contenu")
       }
     }
     
 })
-.catch(error => console.error('Erreur:', error));
 
 export default dictionaryCake
