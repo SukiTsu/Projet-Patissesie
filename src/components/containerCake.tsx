@@ -15,7 +15,7 @@ const ContainerCake:React.FC<Props> = ({ cake }) =>{
     return(
         <div className="container-cake">
             <img src={cake.imgSrc}/>
-            <h2>Pas de titre</h2>
+            <h2>{cake.title}</h2>
             <div className="price">00.00 €</div>
             <p>{cake.content}</p>
         </div>

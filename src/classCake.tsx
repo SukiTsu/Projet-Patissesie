@@ -1,26 +1,28 @@
 export class ClassCake {
-    imgSrc: string;
-    content: string;
-    group:string
-  
-    constructor(imgsrc: string, content: string) {
-        this.imgSrc = imgsrc
-        this.content = content;
-        this.group = ""
-    }
-    setGroup(group:string){
-      this.group = group
-    }
+  title:string
+  imgSrc: string;
+  content: string;
+  categories:string[]
 
-    getImgSrc(){
-      if (this.imgSrc === undefined){
-        console.log("errreuuuur")
-        return ""
-      } 
-      return this.imgSrc
-    }
-  
-    getSummary() {
-      return `Groupe: ${this.group}, lien img: ${this.imgSrc}, content: ${this.content}`;
-    }
+  constructor(title:string, imgsrc: string, content: string, categories: string[]) {
+    this.title = title
+    this.imgSrc = imgsrc
+    this.content = content;
+    this.categories = [...categories]
   }
+  
+  addGroup(category:string){
+    this.categories.push(category)
+  }
+
+  getImgSrc(){
+    if (this.imgSrc === undefined){
+      return ""
+    } 
+    return this.imgSrc
+  }
+
+  getSummary() {
+    return `Categories: ${this.categories}, Titre: ${this.title}`;
+  }
+}

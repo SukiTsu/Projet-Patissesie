@@ -30,45 +30,86 @@ const tokenAtelier = "IGQWRQRTFZAUkpnSnI0ZAklXSVU0RkNuOUl0d2FxSTR1ZAjRyQVdNWUZAT
 const HASTAG = ["fanart","dessin"]
 
 import CakeDictionary from '../../dictionaryCake'
-import { useState } from "react"
 import { ClassCake } from '../../classCake'
+import { extractAndRemoveHashtagsAndBrackets } from './extractWord'
+import { useState } from 'react'
  
 const idUser = "17841414994500741"
 const id2 = "1307916620619552"
 const dictionaryCake = CakeDictionary
 
 //const url = "https://graph.facebook.com/v21.0/17841414994500741?fields=business_discovery.username(suukitsuu)%7Bfollowers_count%2Cmedia_count%2Cmedia%7D&access_token=EAAHiSqxOIusBO3Tg7L1gY46gdFIYPFJtmvIlMkFKbe5tPEFheZBZA5AVHQEPWZBJxyoW5S62ZARZCj6Ly5k3DHtBpQNC7qbKN1HItSpyXONMZAs4WcrQIzt8D1V5vxZCMAVzq3FXoxyLmLgemCsUngomDNkJfTpcT8dk2Kdtq0P06Kd3kymtRVwIaw24rGzJcVRLFhn6fM9JBZCl6Nh14P0ZD"
-const token = "EAAHiSqxOIusBO3Tg7L1gY46gdFIYPFJtmvIlMkFKbe5tPEFheZBZA5AVHQEPWZBJxyoW5S62ZARZCj6Ly5k3DHtBpQNC7qbKN1HItSpyXONMZAs4WcrQIzt8D1V5vxZCMAVzq3FXoxyLmLgemCsUngomDNkJfTpcT8dk2Kdtq0P06Kd3kymtRVwIaw24rGzJcVRLFhn6fM9JBZCl6Nh14P0ZD"
+const token = "EAAMxJHI6qfABOxZA4XUoHZAaooVS5dqyZAVVx1LWrwbvuP9PVKtuRyY6j6lbe1GyOaRldCeWbl2ybF0uyJlh5ZBQE9peT1XwaQmKuNKv7CX5Fuz2ZBBO1m5eNVyqdXPnoPb2QYMNATpvhkO7cLdTQlFXvfnH6PrFv3uBL3mmOZB0XgerYHZCZC2EHoMuXgdokkZAOcSYrDjliTSDqMV2gdgWoDHUDYnZC7ZAubxg3KYek8TNUZAuzte5ZAEEHjcZBrgm0a"
 //const url = `https://graph.facebook.com/v21.0/17841414994500741?fields=business_discovery.username(suukitsuu)%7Bfollowers_count%2Cmedia_count%2Cmedia%7Bid%2Ccomments_count%2Cmedia_url%7D%7D&access_token=${token}`
 //const url =  `https://graph.instagram.com/${idUser}/media?fields=id,caption,media_type,media_url,permalink,timestamp&access_token=${token}`
 
 //const url = "https://graph.facebook.com/v21.0/17841414994500741?fields=business_discovery.username(suukitsuu)%7Bmedia%7Bid%2Ccaption%2Cmedia_url%2Cpermalink%2Cchildren%7Bmedia_url%7D%7D%7D&access_token=EAAHiSqxOIusBOZBZBQm5lP5EbPW18QkUWb6mBU4WScMoiHHrfCtOImPXJYXpZALf0Om9WVcZAa8LN5K774scY4f2IWUz84hP5T4MVulWs8x2gxgoDeAZBij5Oax9KUZCN5MBXfMVt48lZA04EZBZAQZARfwN0ajlDuthZAcOGnywupYAFTP3W0ZBNyLsUHVNNkV7kXUwYcZBNNyYnZAhYpb9NXYAZDZD"
-const url = "https://graph.facebook.com/v21.0/122096825252577148?fields=posts%7Bmessage%2Cfull_picture%7D&access_token=EAAMxJHI6qfABO8b4CUc3OdhocdrTo3OuU5eL1FOZAKYBSEjRcfHecmHnfQD4WxFZAhA6Kntv4ZAZCV7NyZCfTzCIkFwkzrtS6yUtbblBYpthZBvJ7rw5ZBRDUHPhuYQJB7R3N7rKmDKMTqQIKNPn9zv3NLO7B9q3Vrv9z6czPmqBXsD0xfEJ2IdMdd3foM1gPH5xAYm5d0ZBAvBb0RJ6aR4hwTTwGdTAci2NQhbsvZBpnQkFGBUUflOuzXxz8hee3"
 
-fetch(url)
-.then(response => response.json())
-.then(dataInsta => {
-  console.log(dataInsta)
-  const globalData = dataInsta.posts.data
-  console.log(globalData)
-    //setMediaUrl(globalData.map((media: { media_url: any; }) => media.media_url));
-    for (let i=0;i<globalData.length;i++){
-      if (globalData[i].full_picture != undefined && globalData[i].message != undefined){
-        const cake = new ClassCake(globalData[i].full_picture,globalData[i].message)
-        //Regarde les #
-        for (const key in dictionaryCake) {
-          if (globalData[i].message.toLowerCase().includes(key.toLowerCase())) {
-            //Le mot est présent dans la chaîne
-            cake.setGroup(HASTAG[i])
-            dictionaryCake[key].push(cake)
-            break
+const url = `https://graph.facebook.com/v21.0/122096825252577148?fields=id%2Cposts.limit(100)%7Bmessage%2Cfull_picture%7D&access_token=${token}`
+
+/**
+ * Extrait une chaine de caractère entre ** **
+ * @param text 
+ * @returns Chaine de caractère
+ */
+
+
+
+export class CategoryManager {
+  private listCake: ClassCake[] = [];
+  private categoryMap: Map<string, Set<ClassCake>> = new Map();
+
+  // Ajoute un nouvel objet
+  addClassCake(cake: ClassCake): void {
+      this.listCake.push(cake);
+      for (const category of cake.categories) {
+          if (!this.categoryMap.has(category)) {
+              this.categoryMap.set(category, new Set());
           }
-        }
-      }else{
-        console.log("probleme de lien ou de contenu")
+          this.categoryMap.get(category)!.add(cake);
+      }
+  }
+
+  // Récupère tous les objets d'une catégorie donnée
+  getClassCakesByCategory(category: string): ClassCake[] {
+      return this.categoryMap.get(category) ? Array.from(this.categoryMap.get(category)!) : [];
+  }
+
+}
+
+const manager = new CategoryManager();
+
+async function fetchData() {
+  try {
+    const response = await fetch(url);
+    const dataInsta = await response.json();
+    console.log(dataInsta);
+
+    const globalData = dataInsta.posts.data;
+    console.log(globalData);
+
+    for (let i = 0; i < globalData.length; i++) {
+      if (globalData[i].full_picture !== undefined && globalData[i].message !== undefined) {
+        const tempDescription = globalData[i].message;
+        const titleContentHastag = extractAndRemoveHashtagsAndBrackets(tempDescription);
+        
+        const cake = new ClassCake(titleContentHastag.title[0], globalData[i].full_picture, titleContentHastag.cleanedContent, titleContentHastag.categories);
+        manager.addClassCake(cake);
+      } else {
+        console.log("problème de lien ou de contenu");
       }
     }
     
-})
+  } catch (error) {
+    console.error('Erreur lors de la récupération des données:', error);
+  }
+}
 
-export default dictionaryCake
+// Fonction pour initialiser les données et récupérer le manager
+async function initializeManager() {
+  await fetchData();
+  return manager; // Retourne l'instance de manager après l'initialisation
+}
+
+// Exporter manager directement n'est pas possible avant l'initialisation
+export default initializeManager;
