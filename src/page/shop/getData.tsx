@@ -26,7 +26,6 @@
   //const url = `https://graph.facebook.com/v21.0/17841414994500741?fields=business_discovery.username(suukitsuu)%7Bfollowers_count%2Cmedia_count%2Cmedia%7D&access_token=EAAHiSqxOIusBO3Tg7L1gY46gdFIYPFJtmvIlMkFKbe5tPEFheZBZA5AVHQEPWZBJxyoW5S62ZARZCj6Ly5k3DHtBpQNC7qbKN1HItSpyXONMZAs4WcrQIzt8D1V5vxZCMAVzq3FXoxyLmLgemCsUngomDNkJfTpcT8dk2Kdtq0P06Kd3kymtRVwIaw24rGzJcVRLFhn6fM9JBZCl6Nh14P0ZD`
   const Data = fetchData(url);
   */
-const tokenAtelier = "IGQWRQRTFZAUkpnSnI0ZAklXSVU0RkNuOUl0d2FxSTR1ZAjRyQVdNWUZATNW5qS1E4cjdFSTduVGdSZADllRGRzTjhVVHZAWd2xQdnRNRm83ajJPOGE3R2RxdENEVDNpVmludThJNnUzSXJJR3FIenViblhteTFCaS00UlEZD"
 const HASTAG = ["fanart","dessin"]
 
 import CakeDictionary from '../../dictionaryCake'
@@ -44,7 +43,6 @@ const token = "EAAMxJHI6qfABO8sPsK1u8kwfZBlJ1UZBMNN1uesIDp6hvUxVci5W25NOUvWnpD6d
 //const url =  `https://graph.instagram.com/${idUser}/media?fields=id,caption,media_type,media_url,permalink,timestamp&access_token=${token}`
 
 //const url = "https://graph.facebook.com/v21.0/17841414994500741?fields=business_discovery.username(suukitsuu)%7Bmedia%7Bid%2Ccaption%2Cmedia_url%2Cpermalink%2Cchildren%7Bmedia_url%7D%7D%7D&access_token=EAAHiSqxOIusBOZBZBQm5lP5EbPW18QkUWb6mBU4WScMoiHHrfCtOImPXJYXpZALf0Om9WVcZAa8LN5K774scY4f2IWUz84hP5T4MVulWs8x2gxgoDeAZBij5Oax9KUZCN5MBXfMVt48lZA04EZBZAQZARfwN0ajlDuthZAcOGnywupYAFTP3W0ZBNyLsUHVNNkV7kXUwYcZBNNyYnZAhYpb9NXYAZDZD"
-
 const url = `https://graph.facebook.com/v21.0/122096825252577148?fields=id%2Cposts.limit(100)%7Bmessage%2Cfull_picture%7D&access_token=${token}`
 
 /**

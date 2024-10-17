@@ -19,11 +19,11 @@ function App() {
           <Route key={categorie} path={`/shop/${categorie}`} element={<ShopCategoryCake categoryCake={categorie} />}/>
         );
       }
-      setNewRoute(routes); // Mettre à jour le tableau des routes dynamiques
+      setNewRoute(routes); // Met à jour le tableau des routes dynamiques
     }
 
     createRoute();
-  }, [manager]); // Le tableau vide signifie que l'effet ne s'exécutera qu'une seule fois au mon
+  }, []);
   
   return (
     <BrowserRouter>
