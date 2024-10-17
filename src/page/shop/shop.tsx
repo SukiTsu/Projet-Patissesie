@@ -1,8 +1,6 @@
-import { useState } from "react";
 import Navbar from "../../components/navbar";
 import dictionaryCake from "./getData";
 import ContainerGroupCake from "../../components/containerGroupCake";
-import { ClassCake } from "../../classCake";
 import Footer from "../../components/footer";
 
 const Shop =({}) => {
