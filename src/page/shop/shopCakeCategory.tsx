@@ -2,6 +2,7 @@ import Navbar from "../../components/navbar";
 import dictionaryCake from "./getData";
 import ContainerCake from "../../components/containerCake";
 import Footer from "../../components/footer";
+import manager from "./getData";
 
 interface Props{
     categoryCake:string
@@ -13,10 +14,12 @@ interface Props{
  * @returns Composant JSX
  */
 const ShopCategoryCake:React.FC<Props> =({ categoryCake="rollcake" }) => {
-    const listCake = dictionaryCake[categoryCake]
+    const listCake = manager.categoryMap.get(categoryCake)
+    console.log(listCake)
     let htmlCake = []
-    for (let i=0;i<listCake.length;i++){
-        htmlCake.push(<ContainerCake cake={listCake[i]}/>)
+    if (listCake)
+    for (const cake of listCake){
+        htmlCake.push(<ContainerCake cake={cake}/>)
     }
     return (
       <div className="shop-page">

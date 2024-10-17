@@ -2,16 +2,24 @@ import Navbar from "../../components/navbar";
 import dictionaryCake from "./getData";
 import ContainerGroupCake from "../../components/containerGroupCake";
 import Footer from "../../components/footer";
-import initializeManager  from './getData';
+import manager  from './getData';
 
 const Shop =({}) => {
     let listContainer = []
-    let manager;
+
     async function shop() {
-      const manager = await initializeManager(); // Attend que manager soit initialisé
-      
-      console.log("shooopp':", manager.getClassCakesByCategory('saisonnier'));
-      return 
+       // Attend que manager soit initialisé
+      for (const [categorie, cakes] of manager.categoryMap.entries()) {
+        console.log(categorie, cakes);
+        if (manager.categoryMap.get(categorie) != undefined){
+          for (const cake of cakes) {
+            const tempCake = cake
+            const container = <ContainerGroupCake srcImg={tempCake.imgSrc} link={categorie} title={categorie}/>
+            listContainer.push(container)
+            break
+          }
+        }
+      }
     }
     shop()
     /*for (const key in dictionaryCake) {
@@ -24,6 +32,7 @@ const Shop =({}) => {
       <div className="shop-page">
         <Navbar/>
         <div className="all-container">
+          {listContainer}
         </div>
         <Footer/>
       </div>

@@ -39,7 +39,7 @@ const id2 = "1307916620619552"
 const dictionaryCake = CakeDictionary
 
 //const url = "https://graph.facebook.com/v21.0/17841414994500741?fields=business_discovery.username(suukitsuu)%7Bfollowers_count%2Cmedia_count%2Cmedia%7D&access_token=EAAHiSqxOIusBO3Tg7L1gY46gdFIYPFJtmvIlMkFKbe5tPEFheZBZA5AVHQEPWZBJxyoW5S62ZARZCj6Ly5k3DHtBpQNC7qbKN1HItSpyXONMZAs4WcrQIzt8D1V5vxZCMAVzq3FXoxyLmLgemCsUngomDNkJfTpcT8dk2Kdtq0P06Kd3kymtRVwIaw24rGzJcVRLFhn6fM9JBZCl6Nh14P0ZD"
-const token = "EAAMxJHI6qfABOxZA4XUoHZAaooVS5dqyZAVVx1LWrwbvuP9PVKtuRyY6j6lbe1GyOaRldCeWbl2ybF0uyJlh5ZBQE9peT1XwaQmKuNKv7CX5Fuz2ZBBO1m5eNVyqdXPnoPb2QYMNATpvhkO7cLdTQlFXvfnH6PrFv3uBL3mmOZB0XgerYHZCZC2EHoMuXgdokkZAOcSYrDjliTSDqMV2gdgWoDHUDYnZC7ZAubxg3KYek8TNUZAuzte5ZAEEHjcZBrgm0a"
+const token = "EAAMxJHI6qfABO8sPsK1u8kwfZBlJ1UZBMNN1uesIDp6hvUxVci5W25NOUvWnpD6dC7phTyF1joCMZAQ29azAPi7k9MLza9LxnOFE1SlLflt5Ek2TLjs5t2ZCfhr08oN9FtGRXEIlohxoR9Jeqhr5mNNJOjS6PeQ8FAqiZCNdFv0hv6srnEmIZAB9HHopWRQqNu"
 //const url = `https://graph.facebook.com/v21.0/17841414994500741?fields=business_discovery.username(suukitsuu)%7Bfollowers_count%2Cmedia_count%2Cmedia%7Bid%2Ccomments_count%2Cmedia_url%7D%7D&access_token=${token}`
 //const url =  `https://graph.instagram.com/${idUser}/media?fields=id,caption,media_type,media_url,permalink,timestamp&access_token=${token}`
 
@@ -56,8 +56,8 @@ const url = `https://graph.facebook.com/v21.0/122096825252577148?fields=id%2Cpos
 
 
 export class CategoryManager {
-  private listCake: ClassCake[] = [];
-  private categoryMap: Map<string, Set<ClassCake>> = new Map();
+  listCake: ClassCake[] = [];
+  categoryMap: Map<string, Set<ClassCake>> = new Map();
 
   // Ajoute un nouvel objet
   addClassCake(cake: ClassCake): void {
@@ -83,10 +83,8 @@ async function fetchData() {
   try {
     const response = await fetch(url);
     const dataInsta = await response.json();
-    console.log(dataInsta);
 
     const globalData = dataInsta.posts.data;
-    console.log(globalData);
 
     for (let i = 0; i < globalData.length; i++) {
       if (globalData[i].full_picture !== undefined && globalData[i].message !== undefined) {
@@ -110,6 +108,6 @@ async function initializeManager() {
   await fetchData();
   return manager; // Retourne l'instance de manager après l'initialisation
 }
-
+fetchData()
 // Exporter manager directement n'est pas possible avant l'initialisation
-export default initializeManager;
+export default manager;
