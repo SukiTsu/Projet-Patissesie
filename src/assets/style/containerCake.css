@@ -43,3 +43,34 @@
     color: #777;
     padding: 0 10px 15px;
 }
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay {
+    justify-content: center;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.bt-modal-close {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.bt-modal-close:hover {
+    background-color: black;
+    color: white;
+}

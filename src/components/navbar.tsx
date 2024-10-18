@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import '../assets/style/navbar.css'
+import cakeImage from '../assets/logo.png';
 
 export default function Navbar() {
     return (
       <nav className="navbar">
 
-        <div className="navbar-logo">
-          <p>Logo</p>
-        </div>
+        
+          <img src={cakeImage} alt="Logo" className="navbar-logo"/>
+        
 
         <ul className="navbar-menu">
           <li>

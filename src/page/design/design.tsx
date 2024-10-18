@@ -1,11 +1,15 @@
+import Footer from "../../components/footer"
 import Navbar from "../../components/navbar"
 
-const Contact =({}) => {
+const Design =({}) => {
     return(
-        <div className="contact-page">
+        <div className="design-page">
             <Navbar/>
+            <h1>Pesonnalisez votre cake</h1>
+            
+            <Footer/>
         </div>
     )
 }
 
-export default Contact
+export default Design

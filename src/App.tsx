@@ -23,7 +23,7 @@ function App() {
     }
 
     createRoute();
-  }, []);
+  }, [manager]);
   
   return (
     <BrowserRouter>
