@@ -6,17 +6,21 @@ import '../assets/style/containerGroupCake.css'
  * Affichage des différents groupe des cakes, pour rediriger les utilisateurs vers la page correspondant
  */
 interface Props{
-    srcImg:string
+    srcImgs:string[]
     link:string
     title:string
 }
 
-const ContainerGroupCake:React.FC<Props> = ({ srcImg, link, title }) =>{
+const ContainerGroupCake:React.FC<Props> = ({ srcImgs, link, title }) =>{
     const newLink = "/shop/"+link
     return(
         <Link to={newLink}>
             <div className="container-groupe-cake" key={link}>
-                <img src={srcImg}/>
+                <div className={`image-box image-count-${srcImgs.length}`}>
+                    {srcImgs.map((src, index) => (
+                        <img src={src} alt={`Image ${index + 1}`} key={index} />
+                    ))}
+                </div>
                 <h2>{title}</h2>
             </div>
         </Link>

@@ -16,22 +16,22 @@ const Shop =({}) => {
       const tempContainerList: JSX.Element[] = []; // Créer un tableau temporaire
 
       for (const [categorie, cakes] of manager.categoryMap.entries()) {
-        console.log(categorie, cakes);
+        console.log(categorie, cakes)
         
         if (manager.categoryMap.get(categorie) !== undefined) {
-          for (const cake of cakes) {
-            const tempCake = cake;
-            // Créer un composant pour chaque cake et l'ajouter au tableau temporaire
-            const container = (
-              <ContainerGroupCake 
-                srcImg={tempCake.imgSrc} 
-                link={categorie} 
-                title={categorie}
-              />
-            );
-            tempContainerList.push(container);
-            break; // Break après le premier cake, comme dans votre code original
+          
+          let i = 0
+          const iterator = cakes.values()
+          let result = iterator.next()
+          let tabImg = []
+
+          while (!result.done && i<4) {
+            tabImg.push(result.value.imgSrc)
+            result = iterator.next()
+            i++
           }
+          const container = <ContainerGroupCake srcImgs={tabImg} link={categorie} title={categorie}/>
+          tempContainerList.push(container)
         }
       }
 
@@ -48,10 +48,12 @@ const Shop =({}) => {
       listContainer.push(container)
     }*/
     return (
-      <div className="shop-page">
+      <div>
         <Navbar/>
-        <div className="all-container">
-          {listContainer}
+        <div className="content">
+          <div className="all-container">
+            {listContainer}
+          </div>
         </div>
         <Footer/>
       </div>

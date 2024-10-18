@@ -6,9 +6,7 @@ export default function Navbar() {
     return (
       <nav className="navbar">
 
-        
-          <img src={cakeImage} alt="Logo" className="navbar-logo"/>
-        
+        <img src={cakeImage} alt="Logo" className="navbar-logo"/>
 
         <ul className="navbar-menu">
           <li>
@@ -24,6 +22,11 @@ export default function Navbar() {
           <li>
             <Link to="/blog" className="link-navbar">
               <strong>Blog</strong>
+            </Link>
+          </li>
+          <li>
+            <Link to="/cake-design" className="link-navbar">
+              <strong>Cake-design</strong>
             </Link>
           </li>
         </ul>

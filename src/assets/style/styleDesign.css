@@ -1,0 +1,90 @@
+
+.content-design{
+  display: flex;
+}
+.rendu-text{
+  width: 100%;
+}
+.action-user {
+  width: 100%;
+}
+
+.redu-cake {
+    width: 100%;
+    margin: 20px auto;
+  }
+  
+  .couverture {
+    background-color: #d1b3b3; /* Couverture par défaut */
+    height: 300px;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    z-index: 1;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 15% 15% 0px 15%;
+    border-radius: 30% 30% 0 0;
+  }
+  
+  .biscuit {
+    width: 100%;
+    height: 100%;
+    /*position: absolute;*/
+    bottom: 30px;
+    left: 20px;
+    z-index: 2;
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    border-radius: 30% 30% 0 0;
+  }
+  
+  .biscuit.vanille {
+    background-color: #f3e5ab;
+  }
+  
+  .biscuit.chocolat {
+    background-color: #8b4513;
+  }
+  
+  .biscuit.fraise {
+    background-color: #ff9999;
+  }
+  
+  /* Textures (motifs) */
+  .texture.dotted {
+    background-image: radial-gradient(circle, #000000 1px, transparent 1px);
+    background-size: 10px 10px;
+  }
+  
+  .texture.striped {
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      #000000 10px,
+      #000000 20px
+    );
+  }
+  
+  .texture.triangle {
+    background-image: repeating-conic-gradient(
+      transparent 0deg 60deg,
+      #000000 60deg 120deg
+    );
+    background-size: 30px 30px;
+  }
+
+  .fourage {
+    width: 100%;
+    height: 100%;
+    background-color: #3e2723; /* Ganache par défaut */
+    /*position: absolute;*/
+    top: 0;
+    left: 30px;
+    z-index: 3;
+  }
+  

@@ -2,9 +2,9 @@ import Navbar from "../../components/navbar"
 
 const Contact =({}) => {
     return(
-        <div className="contact-page">
+        <div>
             <Navbar/>
-            <div className="contact-content">
+            <div className="content">
                 <h1>Nous contacter</h1>
                 
             </div>

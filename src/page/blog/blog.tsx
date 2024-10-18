@@ -4,7 +4,7 @@ const Blog =({}) => {
     return(
         <div className="blog-page">
             <Navbar/>
-            <div className="content-blog">
+            <div className="content">
                 <h1>Mon parcourt</h1>
             </div>
         </div>

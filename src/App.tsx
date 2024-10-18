@@ -7,6 +7,7 @@ import ShopCategoryCake from './page/shop/shopCakeCategory';
 import manager from "./page/shop/getData";
 import { ReactElement, JSXElementConstructor, ReactNode, useState, useEffect } from "react";
 import { JSX } from "react/jsx-runtime";
+import Design from "./page/design/design";
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
           <Route key={categorie} path={`/shop/${categorie}`} element={<ShopCategoryCake categoryCake={categorie} />}/>
         );
       }
-      setNewRoute(routes); // Met à jour le tableau des routes dynamiques
+      setNewRoute(routes);
     }
 
     createRoute();
@@ -32,10 +33,10 @@ function App() {
         <Route path="/shop" element={<Shop />} />
         {newRoute}
         <Route path="/blog" element={<Blog />} />
+        <Route path="/cake-design" element={<Design />}/>
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
   )
 }
-
 export default App

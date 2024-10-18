@@ -3,9 +3,9 @@ import Navbar from "../../components/navbar"
 
 const Home =({}) => {
     return(
-        <div className="homePage">
+        <div>
             <Navbar/>
-            <div className="content-home">
+            <div className="content">
                 <h1>Bienvenu sur mon site</h1>
                 <p>Ici tu trouveras toute mes patisseries que je réalise avec amour et passion !</p>
             </div>
