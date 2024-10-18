@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
+import '../assets/style/styleModalCheck.css'
 
 interface Props {
-    data: { label: string; value: string }[]; // Liste des options pour les checkboxes
-    method: (values: string[]) => void; // Fonction pour retourner les valeurs cochées
+    data: { label: string; value: string }[];
+    method: (values: string[]) => void;
 }
 
 const ModalSect: React.FC<Props> = ({ data, method }) => {
     const [showModal, setShowModal] = useState(false);
     const [selectedValues, setSelectedValues] = useState<string[]>([]); // État pour stocker les valeurs cochées
 
-    // Ouvrir le modal
     const openModal = () => {
         setShowModal(true);
     };
 
-    // Fermer le modal
     const closeModal = () => {
         setShowModal(false);
-        method(selectedValues); // Passer les valeurs cochées à la fonction lorsque le modal se ferme
+        method(selectedValues);
     };
 
     // Gérer la sélection/déselection des checkboxes avec une limite de 3
@@ -33,7 +32,7 @@ const ModalSect: React.FC<Props> = ({ data, method }) => {
 
     return (
         <div>
-            <button onClick={openModal}>Ouvrir le Modal</button>
+            <button onClick={openModal} className='open-modal'>Ouvrir la sélection des saveur du fourrage</button>
             {showModal && (
                 <div className="modal-overlay">
                     <div className='content-check'>

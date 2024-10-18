@@ -1,0 +1,43 @@
+.couverture.ganache-chocolat-noir {
+    background-color: #4b2e1f;
+}
+
+.couverture.ganache-chocolat-lait {
+    background-color: #a0522d;
+}
+
+.couverture.ganache-chocolat-blanc {
+    background-color: #f5deb3;
+}
+
+.couverture.creme-beurre-ruse {
+    background-color: #ffe4b5;
+}
+
+.couverture.creme-beurre-meringue-suisse {
+    background-color: #faf0e6;
+}
+
+.couverture.ganache-chocolat-noir-pate-sucre {
+    background-color: #4b2e1f;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-size: 20px 20px;
+}
+
+.couverture.ganache-chocolat-noir-pate-amande {
+    background-color: #4b2e1f;
+    background-image: radial-gradient(circle, rgba(255, 223, 186, 0.6) 15%, transparent 15%), radial-gradient(circle, rgba(255, 223, 186, 0.6) 15%, transparent 15%);
+    background-size: 30px 30px;
+}
+
+.couverture.ganache-chocolat-lait-pate-sucre {
+    background-color: #a0522d;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-size: 20px 20px;
+}
+
+.couverture.ganache-chocolat-lait-pate-amande {
+    background-color: #a0522d; 
+    background-image: radial-gradient(circle, rgba(255, 223, 186, 0.6) 15%, transparent 15%), radial-gradient(circle, rgba(255, 223, 186, 0.6) 15%, transparent 15%);
+    background-size: 30px 30px;
+}

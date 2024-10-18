@@ -16,8 +16,6 @@
   
   .couverture {
     border-style: solid;
-    border-color: black;
-    background-color: white;
     height: 300px;
     top: 0;
     left: 0;
@@ -26,8 +24,12 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
-    padding: 15% 15% 0px 15%;
+    padding: 10% 10% 0px 10%;
     border-radius: 15% 15% 0 0;
+  }
+  .couverture.pas-precise{
+    border-color: black;
+    background-color: white;
   }
   
   .biscuit {
@@ -123,12 +125,19 @@
   filter: brightness(1.15);
 }
 
-  .fourage {
-    width: 100%;
-    height: 100%;
-    background-color: #3e2723;
-    top: 0;
-    left: 30px;
-    z-index: 3;
-  }
-  
+
+.all-fourrage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background-color: white;
+  border: solid black;
+}
+.all-fourrage.false {
+  border: none;
+}
+
+.fourrage {
+  flex: 1;
+}

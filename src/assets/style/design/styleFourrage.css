@@ -1,0 +1,91 @@
+.ganache-chocolat-lait {
+    background-color: #a0522d; /* Marron lait */
+}
+
+.ganache-chocolat-noir {
+    background-color: #4b2e1f; /* Chocolat noir profond */
+}
+
+.ganache-chocolat-blanc {
+    background-color: #f5deb3; /* Beige clair crémeux */
+}
+
+.creme-beurre-praline {
+    background-color: #d2691e; /* Praliné noisette */
+}
+
+.caramel-beurre-sale {
+    background-color: #c68c53; /* Couleur caramel */
+}
+
+.ganache-noix-coco {
+    background-color: #fff8dc; /* Ivoire pour la noix de coco */
+}
+
+.creme-beurre-chataigne {
+    background-color: #8b4513; /* Marron châtaigne */
+}
+
+.fruit-saison {
+    background-color: #ff6347; /* Rouge tomate pour les fruits frais */
+}
+
+.noisettes-noix-concassees {
+    background-color: #deb887; /* Couleur noisette */
+}
+
+.ganache-cafe {
+    background-color: #6f4e37; /* Café marron */
+}
+
+.ganache-fruit-rouge {
+    background-color: #b22222; /* Rouge foncé pour les fruits rouges */
+}
+
+.creme-citron {
+    background-color: #fffacd; /* Jaune citron doux */
+}
+
+.chantilly-mascarpone-vanille {
+    background-color: #f5f5dc; /* Blanc cassé vanille */
+}
+
+.confiture-lait {
+    background-color: #e3a869; /* Couleur toffee */
+}
+
+.confiture-maison {
+    background-color: #ff4500; /* Rouge orangé pour la confiture maison */
+}
+
+
+.croustillant-praline-chocolat-lait {
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+    background-size: 10px 10px;
+}
+
+.croustillant-praline-chocolat-noir {
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 0%, transparent 25%, transparent 50%, rgba(88, 57, 28, 0.2) 50%, rgba(88, 57, 28, 0.2) 75%, transparent 75%, transparent);
+    background-size: 10px 10px;
+}
+
+.croustillant-praline-chocolat-blanc {
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgb(255, 255, 255) 50%, rgb(255, 255, 255) 10%, transparent 75%, transparent);
+    background-size: 10px 10px;
+}
+
+/* Texture pour les croustillants pistache */
+.croustillant-pistache-chocolat-lait {
+    background-image: radial-gradient(circle, rgba(34, 139, 34, 0.4) 30%, transparent 10%), linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+    background-size: 10px 10px, 10px 10px;
+}
+
+.croustillant-pistache-chocolat-noir {
+    background-image: radial-gradient(circle, rgba(34, 139, 34, 0.4) 30%, transparent 10%), linear-gradient(45deg, rgba(88, 57, 28, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+    background-size: 10px 10px, 10px 10px;
+}
+
+.croustillant-pistache-chocolat-blanc {
+    background-image: radial-gradient(circle, rgba(34, 139, 34, 0.4) 30%, transparent 10%), linear-gradient(45deg, rgb(255, 255, 255) 0%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+    background-size: 10px 10px, 10px 10px;
+}

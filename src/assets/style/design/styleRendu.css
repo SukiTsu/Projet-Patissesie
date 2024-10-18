@@ -1,0 +1,56 @@
+.rendu-text {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fafafa; /* Fond léger pour imiter une feuille */
+    border: 1px solid #dcdcdc; /* Bordure fine pour un look de feuille imprimée */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour donner du relief */
+    font-family: 'Georgia', serif; /* Police élégante pour un aspect formel */
+    line-height: 1.8; /* Espace suffisant entre les lignes */
+}
+
+h2, h3 {
+    text-align: center;
+    font-weight: bold;
+    color: #333; /* Titre en couleur sombre pour un look professionnel */
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin-top: 20px; /* Espacement supplémentaire au-dessus des sous-titres */
+}
+
+ul {
+    list-style-type: none; /* Supprimer les puces par défaut */
+    padding: 0;
+    margin: 10px 0;
+}
+
+ul.option-biscuit, ul.option-fourrage, ul.option-couverture {
+    border: 1px dashed #dcdcdc; /* Bordure en pointillés pour séparer les sections */
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+ul ul {
+    margin-left: 20px;
+}
+
+li {
+    padding: 5px 0; /* Espacement interne entre chaque élément */
+    border-bottom: 1px solid #ececec; /* Ligne fine entre les éléments pour l'effet de liste */
+}
+
+li:last-child {
+    border-bottom: none; /* Supprimer la dernière ligne */
+}
+
+.rendu-text h3::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #dcdcdc; /* Petite ligne sous chaque sous-titre pour plus de séparation */
+    margin-top: 5px;
+}

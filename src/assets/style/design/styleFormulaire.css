@@ -1,0 +1,66 @@
+.action-user {
+    padding: 20px;
+    background-color: #f9f9f9; /* Fond léger pour rester sobre */
+    border: 1px solid #dcdcdc; /* Bordure subtile pour encadrer la section */
+    border-radius: 8px; /* Coins légèrement arrondis pour une touche moderne */
+    max-width: 800px; /* Largeur maximum pour éviter une section trop étirée */
+    margin: 30px auto; /* Centrer la section et espacer du reste de la page */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour un peu de relief */
+}
+
+.action-user h2 {
+    font-family: 'Georgia', serif; /* Police formelle pour les titres */
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ececec; /* Ligne sous le titre pour délimiter les sections */
+    padding-bottom: 10px;
+}
+
+.action-user label {
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    color: #666;
+    margin-right: 10px; /* Espace entre le label et l'input */
+}
+
+.modif-biscuit {
+    margin-top: 20px;
+}
+
+.modif-biscuit h2 {
+    font-size: 20px;
+    color: #444;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-decoration: underline; /* Soulignement pour démarquer les sections */
+}
+
+.select-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espace entre chaque élément */
+    margin-bottom: 20px;
+}
+
+.select-container select {
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    width: 100%;
+}
+
+.action-user select {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 15px; /* Espace sous les selects */
+}
+
+.action-user button {
+    margin-top: 10px; /* Espace entre le label et le bouton */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

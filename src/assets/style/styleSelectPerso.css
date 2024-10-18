@@ -1,0 +1,60 @@
+.input-field {
+    width: 100%;
+    max-width: 400px; /* Limite la taille du select pour éviter qu'il soit trop large */
+    padding: 10px;
+    margin: 20px auto; /* Espace autour du select pour l'aérer */
+    border: 1px solid #dcdcdc; /* Bordure fine et subtile */
+    background-color: #f9f9f9; /* Fond léger pour un aspect raffiné */
+    font-family: 'Georgia', serif; /* Cohérent avec le style de la feuille de devis */
+    font-size: 16px;
+    color: #333; /* Couleur de texte sombre pour un look formel */
+    border-radius: 4px; /* Coins légèrement arrondis pour un effet moderne */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Légère ombre pour du relief */
+    appearance: none; /* Masque la flèche par défaut des navigateurs */
+    cursor: pointer; /* Curseur de sélection pour l'utilisateur */
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #a3a3a3; /* Couleur de bordure plus visible quand l'utilisateur interagit */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au focus */
+}
+
+.input-field option {
+    padding: 8px;
+    background-color: #fff;
+    color: #333;
+    font-family: 'Georgia', serif;
+    font-size: 14px;
+    border-bottom: 1px solid #ececec; /* Séparation entre les options */
+}
+
+.input-field option:hover {
+    background-color: #f0f0f0; /* Survol des options pour indiquer l'interaction */
+}
+
+.input-field::after {
+    content: '▼'; /* Petite flèche manuelle pour indiquer le dropdown */
+    font-size: 12px;
+    color: #666;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.open-modal {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.open-modal:hover {
+    background-color: #0056b3;
+}

@@ -1,3 +1,4 @@
+import '../assets/style/styleSelectPerso.css'
 
 interface Props {
     data: { label: string; value: string }[]; // tableau d'objets avec `label` et `value`
