@@ -5,6 +5,7 @@ import Footer from "../../components/footer";
 import manager  from './getData';
 import { ReactElement, JSXElementConstructor, ReactNode, useState, useEffect } from "react";
 import { JSX } from "react/jsx-runtime";
+import ChangeStyleSaison from "../../components/changeStyleSaison";
 
 
 const Shop =({}) => {
@@ -16,7 +17,7 @@ const Shop =({}) => {
       const tempContainerList: JSX.Element[] = []; // Créer un tableau temporaire
 
       for (const [categorie, cakes] of manager.categoryMap.entries()) {
-        console.log(categorie, cakes)
+        //console.log(categorie, cakes)
         
         if (manager.categoryMap.get(categorie) !== undefined) {
           
@@ -30,7 +31,7 @@ const Shop =({}) => {
             result = iterator.next()
             i++
           }
-          const container = <ContainerGroupCake srcImgs={tabImg} link={categorie} title={categorie}/>
+          const container = <ContainerGroupCake key={categorie} srcImgs={tabImg} link={categorie} title={categorie}/>
           tempContainerList.push(container)
         }
       }
@@ -50,6 +51,7 @@ const Shop =({}) => {
     return (
       <div>
         <Navbar/>
+        <ChangeStyleSaison />
         <div className="content">
           <div className="all-container">
             {listContainer}

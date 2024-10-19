@@ -7,6 +7,8 @@ const Blog =({}) => {
             <div className="content">
                 <h1>Mon parcourt</h1>
             </div>
+              <div className="leaf"></div>
+
         </div>
     )
 }

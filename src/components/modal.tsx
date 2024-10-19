@@ -1,5 +1,5 @@
 import React, { ReactNode, useState } from 'react';
-import '../assets/style/styleModalCheck.css'
+import '../assets/style/styleModal.css'
 
 interface Props {
     content:ReactNode
@@ -21,8 +21,12 @@ const Modal: React.FC<Props> = ({ content }) => {
             <button onClick={openModal} className='open-modal'>Afficher un devis</button>
             {showModal && (
                 <div className="modal-overlay">
-                    {content}
-                    <button onClick={closeModal} className='bt-modal-close'>Fermer</button>
+                    <div className='content-modal'>
+                        <div className="scrollable-container">
+                            {content}
+                            <button onClick={closeModal} className='bt-modal-close'>Fermer</button>
+                        </div>
+                    </div>
                 </div>
             )}
         </div>

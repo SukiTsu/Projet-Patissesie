@@ -1,0 +1,83 @@
+/* Style pour le fond du body */
+body {
+    background: linear-gradient(to bottom, #cc3c18, #FFCC33); /* Dégradé orangé automnal */
+    position: relative;
+    /*overflow: hidden; Pour s'assurer que les feuilles ne sortent pas du cadre */
+    margin: 0;
+    
+  }
+  
+  /* Feuilles qui tombent */
+  @keyframes fall {
+    0% {
+      transform: translateY(-100px) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(90vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  
+  .leaf {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url('../../feuilleAutomne.png') no-repeat center center;
+    background-size: contain;
+    animation: fall 8s infinite linear;
+    opacity: 0.9;
+  }
+  
+  /* Différentes tailles et animations pour des feuilles */
+  .leaf:nth-child(1) { left: 10%; animation-duration: 6s; }
+  .leaf:nth-child(2) { left: 20%; animation-duration: 8s; }
+  .leaf:nth-child(3) { left: 30%; animation-duration: 7s; }
+  .leaf:nth-child(4) { left: 40%; animation-duration: 9s; }
+  .leaf:nth-child(5) { left: 50%; animation-duration: 8s; }
+  .leaf:nth-child(6) { left: 60%; animation-duration: 10s; }
+  .leaf:nth-child(7) { left: 70%; animation-duration: 7s; }
+  .leaf:nth-child(8) { left: 80%; animation-duration: 11s; }
+  
+  /* Style pour la "feuille de papier" */
+  .content {
+    background: #fff;
+    padding: 20px;
+    margin: 40px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Donne un effet de "flottement" */
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Coins arrondis pour donner l'impression d'une feuille de papier */
+    box-sizing: border-box;
+    position: relative;
+    color: #cc3c18;
+  }
+  
+  /* Ombre subtile pour la feuille */
+  .content::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background: rgba(255, 255, 255, 0.5);
+    z-index: -1;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Ombre plus grande pour simuler la "profondeur" */
+  }
+  .container-groupe-cake{
+    background-color: #cc3c18;
+    
+  }
+  .container-groupe-cake h2 {
+     color: #FFCC33;
+  }
+  .container-cake{
+    background-color: #cc3c18;
+    
+  }
+  .container-cake h2 {
+     color: #FFCC33;
+  }

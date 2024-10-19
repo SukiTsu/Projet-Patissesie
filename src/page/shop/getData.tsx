@@ -73,39 +73,32 @@ export class CategoryManager {
       return this.categoryMap.get(category) ? Array.from(this.categoryMap.get(category)!) : [];
   }
 
+  async fetchData() {
+    try {
+      const response = await fetch(url);
+      const dataInsta = await response.json();
+  
+      const globalData = dataInsta.posts.data;
+  
+      for (let i = 0; i < globalData.length; i++) {
+        if (globalData[i].full_picture !== undefined && globalData[i].message !== undefined) {
+          const tempDescription = globalData[i].message;
+          const titleContentHastag = extractAndRemoveHashtagsAndBrackets(tempDescription);
+          
+          const cake = new ClassCake(titleContentHastag.title[0], globalData[i].full_picture, titleContentHastag.cleanedContent, titleContentHastag.categories);
+          manager.addClassCake(cake);
+        } else {
+          console.log("problème de lien ou de contenu");
+        }
+      }
+      
+    } catch (error) {
+      console.error('Erreur lors de la récupération des données:', error);
+    }
+  }
+
 }
 
 const manager = new CategoryManager();
 
-async function fetchData() {
-  try {
-    const response = await fetch(url);
-    const dataInsta = await response.json();
-
-    const globalData = dataInsta.posts.data;
-
-    for (let i = 0; i < globalData.length; i++) {
-      if (globalData[i].full_picture !== undefined && globalData[i].message !== undefined) {
-        const tempDescription = globalData[i].message;
-        const titleContentHastag = extractAndRemoveHashtagsAndBrackets(tempDescription);
-        
-        const cake = new ClassCake(titleContentHastag.title[0], globalData[i].full_picture, titleContentHastag.cleanedContent, titleContentHastag.categories);
-        manager.addClassCake(cake);
-      } else {
-        console.log("problème de lien ou de contenu");
-      }
-    }
-    
-  } catch (error) {
-    console.error('Erreur lors de la récupération des données:', error);
-  }
-}
-
-// Fonction pour initialiser les données et récupérer le manager
-async function initializeManager() {
-  await fetchData();
-  return manager; // Retourne l'instance de manager après l'initialisation
-}
-fetchData()
-// Exporter manager directement n'est pas possible avant l'initialisation
 export default manager;

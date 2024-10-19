@@ -15,17 +15,19 @@ interface Props{
  */
 const ShopCategoryCake:React.FC<Props> =({ categoryCake="rollcake" }) => {
     const listCake = manager.categoryMap.get(categoryCake)
-    console.log(listCake)
+    //console.log(listCake)
     let htmlCake = []
     if (listCake)
     for (const cake of listCake){
-        htmlCake.push(<ContainerCake cake={cake}/>)
+        htmlCake.push(<ContainerCake key={cake.title} cake={cake}/>)
     }
     return (
       <div className="shop-page">
         <Navbar/>
-        <div className="all-container-cake">
-            {htmlCake}
+        <div className="content">
+          <div className="all-container-cake">
+              {htmlCake}
+          </div>
         </div>
         <Footer/>
       </div>

@@ -36,11 +36,3 @@ export function extractAndRemoveHashtagsAndBrackets(content: string): {
         cleanedContent: cleanedContent.trim() 
     };
 }
-
-// Exemple d'utilisation
-const inputString = "Voici un gâteau **délicieux** [chocolat, praliné], parfait pour les fêtes **festives** [noel].";
-const result = extractAndRemoveHashtagsAndBrackets(inputString);
-
-console.log("Éléments extraits des ** :", result.title); // Affiche : ["délicieux", "festives"]
-console.log("Éléments extraits des [] :", result.categories); // Affiche : ["chocolat", "praliné", "noel"]
-console.log("Contenu nettoyé :", result.cleanedContent); // Affiche : "Voici un gâteau , parfait pour les fêtes."

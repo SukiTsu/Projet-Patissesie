@@ -51,3 +51,28 @@
     align-items: center;
     gap: 8px;
 }
+/* Style global pour les éléments de la barre de défilement */
+::-webkit-scrollbar {
+    width: 12px; /* Largeur de la barre de défilement */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Couleur de fond de la piste de défilement */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; /* Couleur de la barre de défilement */
+    border-radius: 10px; /* Arrondir les bords de la barre */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Couleur de la barre au survol */
+}
+
+/* Applique les styles de défilement à un conteneur spécifique */
+.scrollable-container {
+    
+    overflow-y: scroll; /* Permet le défilement vertical */
+    border: 1px solid #ccc; /* Bordure pour le conteneur */
+    padding: 10px; /* Ajoute un peu de padding */
+}
