@@ -20,11 +20,6 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="/blog" className="link-navbar">
-              <strong>Blog</strong>
-            </Link>
-          </li>
-          <li>
             <Link to="/cake-design" className="link-navbar">
               <strong>Cake-design</strong>
             </Link>

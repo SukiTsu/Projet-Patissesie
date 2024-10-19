@@ -81,3 +81,6 @@ body {
   .container-cake h2 {
      color: #FFCC33;
   }
+  .container-cake p {
+    color: white;
+ }

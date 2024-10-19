@@ -3,6 +3,7 @@ import dictionaryCake from "./getData";
 import ContainerCake from "../../components/containerCake";
 import Footer from "../../components/footer";
 import manager from "./getData";
+import ChangeStyleSaison from "../../components/changeStyleSaison";
 
 interface Props{
     categoryCake:string
@@ -24,6 +25,7 @@ const ShopCategoryCake:React.FC<Props> =({ categoryCake="rollcake" }) => {
     return (
       <div className="shop-page">
         <Navbar/>
+        <ChangeStyleSaison />
         <div className="content">
           <div className="all-container-cake">
               {htmlCake}

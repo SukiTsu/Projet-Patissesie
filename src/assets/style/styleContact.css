@@ -1,0 +1,66 @@
+/* Titre principal */
+.contact-title {
+text-align: center;
+font-size: 2.5em;
+color: #d35400; /* Une couleur orangée pour l'automne */
+margin-bottom: 20px;
+}
+
+/* Informations de contact */
+.contact-info {
+display: flex;
+justify-content: space-between;
+margin-bottom: 30px;
+}
+
+.contact-details, .contact-hours {
+width: 45%;
+}
+
+.contact-details h2, .contact-hours h2 {
+font-size: 1.8em;
+color: #2c3e50;
+margin-bottom: 10px;
+}
+
+.contact-details p, .contact-hours p {
+font-size: 1.1em;
+line-height: 1.6;
+}
+
+/* Localisation et carte */
+.contact-map {
+text-align: center;
+margin-top: 30px;
+}
+
+.contact-map h2 {
+font-size: 1.8em;
+color: #2c3e50;
+margin-bottom: 20px;
+}
+
+.map-placeholder {
+width: 100%;
+height: 300px;
+background-color: #ecf0f1;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 1.2em;
+color: #7f8c8d;
+border-radius: 8px;
+border: 2px dashed #bdc3c7;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+.contact-info {
+    flex-direction: column;
+}
+
+.contact-details, .contact-hours {
+    width: 100%;
+    margin-bottom: 20px;
+}
+}

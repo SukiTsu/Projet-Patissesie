@@ -1,9 +1,8 @@
 import Navbar from "../../components/navbar";
-import dictionaryCake from "./getData";
 import ContainerGroupCake from "../../components/containerGroupCake";
 import Footer from "../../components/footer";
 import manager  from './getData';
-import { ReactElement, JSXElementConstructor, ReactNode, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { JSX } from "react/jsx-runtime";
 import ChangeStyleSaison from "../../components/changeStyleSaison";
 

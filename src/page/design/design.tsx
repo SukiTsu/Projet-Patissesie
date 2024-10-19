@@ -2,15 +2,16 @@ import { useState } from "react"
 import Footer from "../../components/footer"
 import Navbar from "../../components/navbar"
 import composition from "./composition"
+import SelectPerso from "../../components/selectPerso"
+import ModalSect from "../../components/modalCheck"
+import Modal from "../../components/modal"
+import Formulaire from "./formulaire"
 import '../../assets/style/design/styleDesign.css'
 import '../../assets/style/design/styleFourrage.css'
 import '../../assets/style/design/styleCouverture.css'
 import '../../assets/style/design/styleRendu.css'
 import '../../assets/style/design/styleFormulaire.css'
-import SelectPerso from "../../components/selectPerso"
-import ModalSect from "../../components/modalCheck"
-import Modal from "../../components/modal"
-import Formulaire from "./formulaire"
+import ChangeStyleSaison from "../../components/changeStyleSaison"
 
 const Design =({}) => {
     const [choixTextureBiscuit,setChoixTextureBiscuit] = useState("pas-precise")
@@ -24,6 +25,7 @@ const Design =({}) => {
     return(
         <div>
             <Navbar/>
+            <ChangeStyleSaison />
             <div className="content">
                 <h1>Pesonnalisez votre cake</h1>
                 <div className="content-design">
