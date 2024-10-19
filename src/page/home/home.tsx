@@ -8,7 +8,7 @@ const Home =({}) => {
             <ChangeStyleSain />
             <Navbar/>
             <div className="content">
-            <h1>Bienvenue dans mon univers gourmand !</h1>
+            <h2>Bienvenue dans mon univers gourmand !</h2>
             <p>Depuis toute petite, la pâtisserie est pour moi une véritable passion. 
                 Après avoir passé des années à m'amuser avec les enfants dans des centres de loisirs, j’ai décidé de me lancer pleinement dans l’art sucré, notamment lors du confinement. 
                 Ce moment m’a permis de perfectionner mes recettes et d'obtenir mon CAP Pâtisserie. 
@@ -16,7 +16,6 @@ const Home =({}) => {
                 </p><br/>
                 <p>Découvrez mes cookies signature <strong>"Dada Cookie"</strong>, mes <strong>gâteaux de voyage</strong> (muffins, sablés, quatre-quarts) et des <strong> layer cakes personnalisés</strong> pour toutes les occasions. 
                 Que ce soit pour un anniversaire, une fête de famille, ou simplement pour vous faire plaisir, je suis là pour vous offrir des moments sucrés inoubliables !</p>
-                
                 <h2>Des pâtisseries pour toute la famille </h2>
                 <p>Je propose des gourmandises pour petits et grands, avec une attention particulière à la qualité des ingrédients et à un dosage équilibré en sucre. 
                 Mes créations sont moins sucrées que celles du commerce classique, mais tout aussi gourmandes !</p>
