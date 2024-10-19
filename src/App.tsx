@@ -5,24 +5,29 @@ import Blog from './page/blog/blog';
 import Contact from './page/contact/contact';
 import ShopCategoryCake from './page/shop/shopCakeCategory';
 import manager from "./page/shop/getData";
-import { ReactElement, JSXElementConstructor, ReactNode, useState, useEffect } from "react";
+import { ReactElement, JSXElementConstructor, ReactNode, useState, useEffect, useRef } from "react";
 import { JSX } from "react/jsx-runtime";
 import Design from "./page/design/design";
 
 function App() {
 
   const [newRoute, setNewRoute] = useState<JSX.Element[]>([]);
+  const hasFetchedData = useRef(false);
   useEffect(() => {
     async function createRoute() {
-      const routes: JSX.Element[] = [];
-      for (const [categorie, cakes] of manager.categoryMap.entries()) {
-        routes.push(
-          <Route key={categorie} path={`/shop/${categorie}`} element={<ShopCategoryCake categoryCake={categorie} />}/>
-        );
+      if (!hasFetchedData.current) {
+        hasFetchedData.current = true
+        const routes: JSX.Element[] = [];
+        await manager.fetchData()
+        for (const [categorie, cakes] of manager.categoryMap.entries()) {
+          routes.push(
+            <Route key={categorie} path={`/shop/${categorie}`} element={<ShopCategoryCake categoryCake={categorie} />}/>
+          );
+          console.log("add: ",categorie)
+        }
+        setNewRoute(routes);
       }
-      setNewRoute(routes);
     }
-
     createRoute();
   }, [manager]);
   
