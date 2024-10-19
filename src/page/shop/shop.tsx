@@ -10,7 +10,7 @@ import ChangeStyleSaison from "../../components/changeStyleSaison";
 
 const Shop =({}) => {
   const [listContainer, setListContainer] = useState<JSX.Element[]>([]);
-
+  
   useEffect(() => {
     // Fonction pour remplir listContainer
     async function shop() {
@@ -39,15 +39,14 @@ const Shop =({}) => {
       // Met à jour listContainer avec les nouveaux éléments
       setListContainer(tempContainerList);
     }
-
     shop(); // Appeler la fonction après le montage
+    if (manager.listCake.length <= 0){
+      setListContainer([<div key="error" className="error">Il se trouve que notre site a été surchargé, veuillez rafraîchir la page. Si le problème persiste, merci de revenir plus tard.</div>])
+    }
+    
+    
   }, []); // Le tableau vide signifie que useEffect s'exécute une seule fois
-    /*for (const key in dictionaryCake) {
-      if (dictionaryCake[key].length === 0) break
-      const tempCake = dictionaryCake[key][0]
-      const container = <ContainerGroupCake srcImg={tempCake.getImgSrc()} link={key} title={key}/>
-      listContainer.push(container)
-    }*/
+    
     return (
       <div>
         <Navbar/>

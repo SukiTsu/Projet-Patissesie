@@ -14,6 +14,7 @@ function App() {
   const [newRoute, setNewRoute] = useState<JSX.Element[]>([]);
   const hasFetchedData = useRef(false);
   useEffect(() => {
+    
     async function createRoute() {
       if (!hasFetchedData.current) {
         hasFetchedData.current = true
@@ -29,7 +30,7 @@ function App() {
       }
     }
     createRoute();
-  }, [manager]);
+  }, [manager]);    
   
   return (
     <BrowserRouter>
