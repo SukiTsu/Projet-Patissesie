@@ -18,10 +18,10 @@ const Footer =({}) => {
                 <div className="footer-section">
                     <h3>Nos pages</h3>
                     <ul className="page-list">
-                        <li><Link to="/" className="link-navbar"><a>Accueil</a></Link></li>
-                        <li><Link to="/shop" className="link-navbar"><a>Boutique</a></Link></li>
-                        <li><Link to="/cake-design" className="link-navbar"><a>CakeDesign</a></Link></li>
-                        <li><Link to="/contact" className="link-navbar"><a>Contact</a></Link></li>
+                        <li><Link to="/" className="link-navbar">Accueil</Link></li>
+                        <li><Link to="/shop" className="link-navbar">Boutique</Link></li>
+                        <li><Link to="/cake-design" className="link-navbar">CakeDesign</Link></li>
+                        <li><Link to="/contact" className="link-navbar">Contact</Link></li>
                     </ul>
                 </div>
 

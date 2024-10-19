@@ -67,6 +67,10 @@ body {
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Ombre plus grande pour simuler la "profondeur" */
   }
+
+  .content.h2{
+    color: #cc3c18;
+  }
   .container-groupe-cake{
     background-color: #cc3c18;
     
