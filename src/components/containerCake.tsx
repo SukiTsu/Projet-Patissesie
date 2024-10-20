@@ -24,12 +24,13 @@ const ContainerCake:React.FC<Props> = ({ cake }) =>{
     if (showModal){
         return(
             <div className="modal-overlay">
-                <div className="container-cake">
-                    <img src={cake.imgSrc}/>
-                    <h2>{cake.title}</h2>
-                    {/*<div className="price">00.00 €</div> */}
-                    <p>{cake.content}</p>
-                    <button onClick={closeModal}  className="bt-modal-close" >Fermer</button>
+                    <div className="container-cake modal">
+                        <img src={cake.imgSrc}/>
+                        <h2>{cake.title}</h2>
+                        {/*<div className="price">00.00 €</div> */}
+                        <p>{cake.content}</p>
+                        <button onClick={closeModal}  className="bt-modal-close" >Fermer</button>
+                
                 </div>
             </div>
         )

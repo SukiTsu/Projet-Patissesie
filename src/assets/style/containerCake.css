@@ -53,14 +53,31 @@
     display: flex;
     align-items: center;
     z-index: 1000;
-}
-
-.modal-overlay {
     justify-content: center;
     padding: 20px;
     border-radius: 8px;
     width: 100%;
     text-align: center;
+}
+.container-cake.modal {
+    width: 50%;
+}
+
+.container-cake.modal img {
+    height: 400px;
+}
+
+.container-cake.modal h2 {
+    font-size: 1.7rem;
+}
+
+.container-cake.modal p {
+    font-size: 1.3rem;
+    padding: 0 30px 30px;
+}
+
+.container-cake.modal:hover {
+    transform: none;
 }
 
 .bt-modal-close {

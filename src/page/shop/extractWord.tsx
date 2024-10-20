@@ -6,13 +6,16 @@ export function extractAndRemoveHashtagsAndBrackets(content: string): {
     const title: string[] = [];
     const categories: string[] = [];
 
+    // Suppresion des #
+    const hashtagRegex = /#.*$/gm;
+    let cleanedContent = content.replace(hashtagRegex, '').trim();
+
     // Utiliser une regex pour trouver les éléments entre ** **
-    const hashtagRegex = /\*\*(.*?)\*\*/g;
-    let cleanedContent = content;
+    const etoileRegex = /\*\*(.*?)\*\*/g;
 
     // Extraction des chaînes entre **
     let matchHashtags;
-    while ((matchHashtags = hashtagRegex.exec(content)) !== null) {
+    while ((matchHashtags = etoileRegex.exec(content)) !== null) {
         title.push(matchHashtags[1].trim());
         // Supprimer les éléments ** ** de la chaîne nettoyée
         cleanedContent = cleanedContent.replace(matchHashtags[0], '');
