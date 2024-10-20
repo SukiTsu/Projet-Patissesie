@@ -1,5 +1,6 @@
 import React, { FC } from "react"
 import '../../assets/style/styleFormulaire.css'
+import SendMail from "../../components/sendMail"
 
 
 interface Props{
@@ -21,6 +22,18 @@ const Formulaire:React.FC<Props> = ({choixSaveurBiscuit,choixTextureBiscuit,choi
     }else if (!validCharacters.test(motsClient)) {
         motsClient = "Merci de ne peux pas utiliser des caractère spéciaux"
     }
+    let preposition = "à la saveur"
+    let option = ""
+    if (choixOptionBiscuit != "aucun") option = ` Avec un supplément: ${choixOptionBiscuit}`
+    if (choixSaveurFourrage.length > 1) preposition = "aux saveurs"
+    const contentMail= `Je souhaite: \n
+    - Une biscuit à la saveur: ${choixSaveurBiscuit}, et d'une texture: ${choixTextureBiscuit}.${option}\n
+    - Un fourrage ${preposition}: ${choixSaveurFourrage}, et d'une texture: ${choixTextureFourrage}.\n
+    - Une couverture à la texture: ${choixTextureCouverture}.\n
+    Pour ${choixNombrePersonne} pars.\n
+    ${motsClient}
+    `
+
     return(
         <div className="">
             <h2>Ce que je souhaite</h2>
@@ -67,7 +80,11 @@ const Formulaire:React.FC<Props> = ({choixSaveurBiscuit,choixTextureBiscuit,choi
                 </tr>
             </table>
             
-            
+            <SendMail formData={{
+                email: "",
+                subject: "Commande personnalisé Cake-design",
+                message: contentMail
+            }} />
         </div>
     )
 }
