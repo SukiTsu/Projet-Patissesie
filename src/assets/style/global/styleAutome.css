@@ -44,24 +44,23 @@ body {
   .leaf:nth-child(7) { left: 70%; animation-duration: 7s; }
   .leaf:nth-child(8) { left: 80%; animation-duration: 11s; }
   
-  /* Style pour la "feuille de papier" */
   .content {
     background: #fff;
     padding: 20px;
     margin: 40px auto;
     max-width: 800px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Donne un effet de "flottement" */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border: 1px solid #ddd;
-    border-radius: 10px; /* Coins arrondis pour donner l'impression d'une feuille de papier */
+    border-radius: 10px;
     box-sizing: border-box;
     position: relative;
     color: var(--couleur-orange);
   }
-  .content p{
+  
+  .content p {
     text-align: center;
   }
   
-  /* Ombre subtile pour la feuille */
   .content::before {
     content: '';
     position: absolute;
@@ -72,8 +71,46 @@ body {
     background: rgba(255, 255, 255, 0.5);
     z-index: -1;
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Ombre plus grande pour simuler la "profondeur" */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   }
+  
+  /* Pour les tablettes (768px et moins) */
+  @media (max-width: 768px) {
+    .content {
+      padding: 15px;
+      margin: 30px auto;
+      max-width: 90%;
+    }
+  
+    .content::before {
+      top: -8px;
+      left: -8px;
+      width: calc(100% + 16px);
+      height: calc(100% + 16px);
+    }
+  }
+  
+  /* Pour les petits écrans et smartphones (480px et moins) */
+  @media (max-width: 480px) {
+    .content {
+      padding: 10px;
+      margin: 20px auto;
+      max-width: 95%;
+    }
+  
+    .content::before {
+      top: -6px;
+      left: -6px;
+      width: calc(100% + 12px);
+      height: calc(100% + 12px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    .content p {
+      font-size: 14px;
+    }
+  }
+  
 
   .content.h2{
     color: var(--couleur-orange)
