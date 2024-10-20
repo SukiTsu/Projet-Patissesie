@@ -40,7 +40,10 @@ const Shop =({}) => {
     }
     shop(); // Appeler la fonction après le montage
     if (manager.listCake.length <= 0){
-      setListContainer([<div key="error" className="error">Il se trouve que notre site a été surchargé, veuillez rafraîchir la page. Si le problème persiste, merci de revenir plus tard.</div>])
+      setListContainer([<div key="error" className="error">
+        <p>Il se trouve que notre site a été surchargé, veuillez changer de page ou cliquer sur le bouton Acutaliser. Si le problème persiste, merci de revenir plus tard.</p>
+        <button onClick={shop} className="bt actualise">Actualiser</button>
+        </div>])
     }
     
     
@@ -51,6 +54,8 @@ const Shop =({}) => {
         <Navbar/>
         <ChangeStyleSaison />
         <div className="content">
+          <h2>Voici mes gâteaux classés par catégories</h2>
+          <p>Cliquez sur l'un d'entre eux pour afficher une liste de gâteaux de cette catégorie</p>
           <div className="all-container">
             {listContainer}
           </div>

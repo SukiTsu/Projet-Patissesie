@@ -1,0 +1,42 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  table, th, td {
+    border: 2px solid ; /* Bordure solide autour du tableau et des bords */
+  }
+  
+  td {
+    border-left: 2px dotted grey; /* Bordure en pointillés pour les colonnes internes */
+    border-right: 2px dotted grey;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  h3 {
+    margin: 0;
+  }
+  
+  tr {
+    border-bottom: 2px solid ; /* Bordure solide pour les lignes */
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    padding: 5px 0;
+  }
+  

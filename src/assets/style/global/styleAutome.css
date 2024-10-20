@@ -1,6 +1,10 @@
-/* Style pour le fond du body */
+:root {
+  --couleur-orange: #cc3c18;
+  --couleur-jaune: #FFCC33;
+  --couleur-maron: #643602;
+}
 body {
-    background: linear-gradient(to bottom, #cc3c18, #FFCC33); /* Dégradé orangé automnal */
+    background: linear-gradient(to bottom, var(--couleur-orange), var(--couleur-jaune));
     position: relative;
     /*overflow: hidden; Pour s'assurer que les feuilles ne sortent pas du cadre */
     margin: 0;
@@ -51,7 +55,10 @@ body {
     border-radius: 10px; /* Coins arrondis pour donner l'impression d'une feuille de papier */
     box-sizing: border-box;
     position: relative;
-    color: #cc3c18;
+    color: var(--couleur-orange);
+  }
+  .content p{
+    text-align: center;
   }
   
   /* Ombre subtile pour la feuille */
@@ -69,22 +76,46 @@ body {
   }
 
   .content.h2{
-    color: #cc3c18;
+    color: var(--couleur-orange)
   }
   .container-groupe-cake{
-    background-color: #cc3c18;
+    background-color: var(--couleur-orange);
     
   }
   .container-groupe-cake h2 {
-     color: #FFCC33;
+     color: var(--couleur-jaune);
   }
   .container-cake{
-    background-color: #cc3c18;
+    background-color: var(--couleur-orange);
     
   }
   .container-cake h2 {
-     color: #FFCC33;
+     color: var(--couleur-jaune);
   }
   .container-cake p {
     color: white;
  }
+
+ .bt {
+  padding: 10px 20px;
+  background-color: var(--couleur-orange);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bt.modal-close-cake {
+  background-color: var(--couleur-jaune);
+  color: var(--couleur-maron);
+}
+.bt.modal-close-cake:hover {
+  background-color: var(--couleur-maron);
+  color: var(--couleur-jaune);
+}
+
+table, th, td {
+  border-bottom: var(--couleur-orange);
+}

@@ -14,16 +14,16 @@ interface Props{
 const ContainerGroupCake:React.FC<Props> = ({ srcImgs, link, title }) =>{
     const newLink = "/shop/"+link
     return(
-        <Link to={newLink}>
-            <div className="container-groupe-cake" key={link}>
+        <div className="container-groupe-cake" key={link}>
+            <Link to={newLink}>
                 <div className={`image-box image-count-${srcImgs.length}`}>
                     {srcImgs.map((src, index) => (
                         <img src={src} alt={`Image ${index + 1}`} key={index} />
                     ))}
                 </div>
                 <h2>{title}</h2>
-            </div>
-        </Link>
+            </Link>
+        </div>
     )
 }
 

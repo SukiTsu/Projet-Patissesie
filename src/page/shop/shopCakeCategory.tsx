@@ -27,6 +27,7 @@ const ShopCategoryCake:React.FC<Props> =({ categoryCake="rollcake" }) => {
         <Navbar/>
         <ChangeStyleSaison />
         <div className="content">
+          <h2>Cliquez sur l'un d'entre eux pour l'afficher en détails</h2>
           <div className="all-container-cake">
               {htmlCake}
           </div>

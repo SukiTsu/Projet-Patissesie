@@ -12,6 +12,7 @@ import '../../assets/style/design/styleCouverture.css'
 import '../../assets/style/design/styleRendu.css'
 import '../../assets/style/design/styleFormulaire.css'
 import ChangeStyleSaison from "../../components/changeStyleSaison"
+import Textarea from "../../components/textArea"
 
 const Design =({}) => {
     const [choixTextureBiscuit,setChoixTextureBiscuit] = useState("pas-precise")
@@ -21,6 +22,7 @@ const Design =({}) => {
     const [choixTextureFourrage,setChoixTextureFourrage] = useState("pas-precise")
     const [choixTextureCouverture,setChoixTextureCouverture] = useState("pas-precise")
     const [choixNombrePersonne,setChoixNombrePersonne] = useState("8")
+    const [motsClients,setMotsClients] = useState("")
 
     return(
         <div>
@@ -28,6 +30,9 @@ const Design =({}) => {
             <ChangeStyleSaison />
             <div className="content">
                 <h1>Pesonnalisez votre cake</h1>
+                <p>Ici, vous pouvez personnaliser votre Cake-Design grâce à ce formulaire ci-dessous. Une fois rempli, cliquer sur le bouton "Afficher un devis" pour ainsi obtenir un devis.
+                Faites une capture d'écran pour faciliter notre prochain échange
+                </p>
                 <div className="content-design">
                     <div className="redu-cake">
                         <div className={`couverture ${choixTextureCouverture}`}>
@@ -62,7 +67,10 @@ const Design =({}) => {
 
                             <h2>Nombre de part</h2>
                                 <SelectPerso value={choixNombrePersonne} data={composition[6]} method={setChoixNombrePersonne}/>
-                                <Modal content={<Formulaire choixSaveurBiscuit={choixSaveurBiscuit} choixTextureBiscuit={choixTextureBiscuit} choixOptionBiscuit={choixOptionBiscuit} choixSaveurFourrage={choixSaveurFourrage} choixTextureFourrage={choixTextureFourrage} choixTextureCouverture={choixTextureCouverture} choixNombrePersonne={choixNombrePersonne}/>}/>
+                            
+                            <h2>Un détails à ajouter?</h2>
+                                <Textarea valueUser={motsClients} method={setMotsClients}/>
+                                <Modal content={<Formulaire choixSaveurBiscuit={choixSaveurBiscuit} choixTextureBiscuit={choixTextureBiscuit} choixOptionBiscuit={choixOptionBiscuit} choixSaveurFourrage={choixSaveurFourrage} choixTextureFourrage={choixTextureFourrage} choixTextureCouverture={choixTextureCouverture} choixNombrePersonne={choixNombrePersonne} motsClient={motsClients}/>}/>
                         </div>
                     </div>
                 </div>

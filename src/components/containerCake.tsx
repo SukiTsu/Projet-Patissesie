@@ -29,7 +29,7 @@ const ContainerCake:React.FC<Props> = ({ cake }) =>{
                         <h2>{cake.title}</h2>
                         {/*<div className="price">00.00 €</div> */}
                         <p>{cake.content}</p>
-                        <button onClick={closeModal}  className="bt-modal-close" >Fermer</button>
+                        <button onClick={closeModal}  className="bt modal-close-cake" >Fermer</button>
                 
                 </div>
             </div>

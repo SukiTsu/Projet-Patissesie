@@ -18,13 +18,13 @@ const Modal: React.FC<Props> = ({ content }) => {
 
     return (
         <div>
-            <button onClick={openModal} className='open-modal'>Afficher un devis</button>
+            <button onClick={openModal} className='bt open-modal'>Afficher un devis</button>
             {showModal && (
                 <div className="modal-overlay">
                     <div className='content-modal'>
                         <div className="scrollable-container">
                             {content}
-                            <button onClick={closeModal} className='bt-modal-close'>Fermer</button>
+                            <button onClick={closeModal} className='bt modal-close'>Fermer</button>
                         </div>
                     </div>
                 </div>

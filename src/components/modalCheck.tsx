@@ -32,7 +32,7 @@ const ModalSect: React.FC<Props> = ({ data, method }) => {
 
     return (
         <div>
-            <button onClick={openModal} className='open-modal'>Ouvrir la sélection des saveur du fourrage</button>
+            <button onClick={openModal} className='bt open-modal'>Ouvrir la sélection des saveur du fourrage</button>
             {showModal && (
                 <div className="modal-overlay">
                     <div className='content-check'>
@@ -53,7 +53,7 @@ const ModalSect: React.FC<Props> = ({ data, method }) => {
                                 </div>
                             ))}
                         </div>
-                        <button onClick={closeModal} className='bt-modal-close'>Fermer</button>
+                        <button onClick={closeModal} className='bt modal-close'>Fermer</button>
                     </div>
                 </div>
             )}
