@@ -8,6 +8,7 @@ import manager from "./page/shop/getData";
 import { ReactElement, JSXElementConstructor, ReactNode, useState, useEffect, useRef } from "react";
 import { JSX } from "react/jsx-runtime";
 import Design from "./page/design/design";
+import NotFound from "./page/error/error";
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/cake-design" element={<Design />}/>
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   )
