@@ -75,7 +75,7 @@ const Shop =({}) => {
     }
     
     
-  }, [valueSearchBar]); // Le tableau vide signifie que useEffect s'exécute une seule fois
+  }, [valueSearchBar]);
     
     return (
       <div>

@@ -27,7 +27,7 @@ export class CategoryManager {
   async fetchData() {
     try {
       const response = await fetch(url);
-      console.log("shearch: ", token)
+      //console.log("shearch: ", token)
       if (!response.ok) {
         if (response.status === 400) {
           throw new Error(`Erreur 400: Ressource non trouvée à l'URL ${token}`);

@@ -19,10 +19,9 @@ const Contact =({}) => {
                 </div>
 
                 <div className="contact-hours">
-                    <h2>Horaires d'ouverture</h2>
-                    <p><strong>Lundi - Vendredi :</strong> 9h00 - 18h00</p>
-                    <p><strong>Samedi :</strong> 10h00 - 17h00</p>
-                    <p><strong>Dimanche :</strong> Fermé</p>
+                    <h2>Horaires de marché</h2>
+                    <p><strong>Mercredi Viarmes:</strong> 8h00 - 13h00</p>
+                    <p><strong>Samedi L'isle Adam:</strong> 8h00 - 13h00</p>
                 </div>
             </div>
 

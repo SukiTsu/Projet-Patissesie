@@ -1,12 +1,12 @@
-import ChangeStyleSain from "../../components/changeStyleSaison"
+import ChangeStyleSaison from "../../components/changeStyleSaison"
 import Footer from "../../components/footer"
 import Navbar from "../../components/navbar"
 
 const Home =({}) => {
     return(
         <div className="container">
-            <ChangeStyleSain />
             <Navbar/>
+            <ChangeStyleSaison />
             <div className="content">
             <h2>Bienvenue dans mon univers gourmand !</h2>
             <p>Depuis toute petite, la pâtisserie est pour moi une véritable passion. 

@@ -1,0 +1,209 @@
+:root {
+    --couleur-orange: #290202;
+    --couleur-jaune: #cc3c18;
+    --couleur-maron: #643602;
+  }
+  body {
+    background: linear-gradient(to bottom, var(--couleur-orange), var(--couleur-jaune));
+    position: relative;
+    /*overflow: hidden; Pour s'assurer que les feuilles ne sortent pas du cadre */
+    margin: 0;
+    
+  }
+    /* Feuilles qui tombent */
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(90vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    
+    
+    .citrouille {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: url('../../citrouille.png') no-repeat center center;
+      background-size: contain;
+      animation: fall 8s infinite linear;
+      opacity: 0.9;
+    }
+    
+    /* Différentes tailles et animations pour des feuilles */
+    .citrouille:nth-child(1) { left: 10%; animation-duration: 6s; }
+    .citrouille:nth-child(2) { left: 20%; animation-duration: 8s; }
+    .citrouille:nth-child(3) { left: 30%; animation-duration: 7s; }
+    .citrouille:nth-child(4) { left: 40%; animation-duration: 9s; }
+    .citrouille:nth-child(5) { left: 50%; animation-duration: 8s; }
+    .citrouille:nth-child(6) { left: 60%; animation-duration: 10s; }
+    .citrouille:nth-child(7) { left: 70%; animation-duration: 7s; }
+    .citrouille:nth-child(8) { left: 80%; animation-duration: 11s; }
+    
+    .content {
+      background: #fff;
+      padding: 20px;
+      margin: 40px auto;
+      max-width: 800px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-sizing: border-box;
+      position: relative;
+      color: var(--couleur-orange);
+    }
+    
+    .content p {
+      text-align: center;
+    }
+    
+    .content::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      width: calc(100% + 20px);
+      height: calc(100% + 20px);
+      background: rgba(255, 255, 255, 0.5);
+      z-index: -1;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Pour les tablettes (768px et moins) */
+    @media (max-width: 768px) {
+      .content {
+        padding: 15px;
+        margin: 30px auto;
+        max-width: 90%;
+      }
+    
+      .content::before {
+        top: -8px;
+        left: -8px;
+        width: calc(100% + 16px);
+        height: calc(100% + 16px);
+      }
+    }
+    
+    /* Pour les petits écrans et smartphones (480px et moins) */
+    @media (max-width: 480px) {
+      .content {
+        padding: 10px;
+        margin: 20px auto;
+        max-width: 95%;
+      }
+    
+      .content::before {
+        top: -6px;
+        left: -6px;
+        width: calc(100% + 12px);
+        height: calc(100% + 12px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    
+      .content p {
+        font-size: 14px;
+      }
+    }
+    
+  
+    .content.h2{
+      color: var(--couleur-orange)
+    }
+    .container-groupe-cake{
+      background-color: var(--couleur-orange);
+      
+    }
+    .container-groupe-cake h2 {
+       color: var(--couleur-jaune);
+    }
+    .container-cake{
+      background-color: var(--couleur-orange);
+      
+    }
+    .container-cake h2 {
+       color: var(--couleur-jaune);
+    }
+    .container-cake p {
+      color: white;
+   }
+  
+   .bt {
+    padding: 10px 20px;
+    background-color: var(--couleur-orange);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .bt.modal-close-cake {
+    background-color: var(--couleur-jaune);
+    color: var(--couleur-maron);
+  }
+  .bt.modal-close-cake:hover {
+    background-color: var(--couleur-maron);
+    color: var(--couleur-jaune);
+  }
+  
+  table, th, td {
+    border-bottom: var(--couleur-orange);
+  }
+  
+  /**
+    Toggle
+  */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .input-toggle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    display: none; /* On cache l'élément par défaut */
+  }
+  
+  .slider-image {
+    width: 30px; /* Ajuste la taille de l'image pour qu'elle rentre bien dans le slider */
+    height: 30px;
+    position: absolute;
+    /*left: 4px;*/
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.4s ease;
+    border-radius: 50%; /* Pour donner une forme ronde */
+  }
+  
+  .input-toggle:checked + .slider {
+    background-color: var(--couleur-jaune);
+  }
+  
+  .input-toggle:checked + .slider .slider-image {
+    transform: translate(26px, -50%); 
+  }
+  
