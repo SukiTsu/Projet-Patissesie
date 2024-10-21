@@ -2,21 +2,40 @@ import Navbar from "../../components/navbar";
 import ContainerGroupCake from "../../components/containerGroupCake";
 import Footer from "../../components/footer";
 import manager  from './getData';
-import { useState, useEffect } from "react";
+import { useState, useEffect, SetStateAction } from "react";
 import { JSX } from "react/jsx-runtime";
 import ChangeStyleSaison from "../../components/changeStyleSaison";
+import SearchBar from "../../components/searchBar";
+import { ClassCake } from "../../classCake";
+import ContainerCake from "../../components/containerCake";
 
 
 const Shop =({}) => {
   const [listContainer, setListContainer] = useState<JSX.Element[]>([]);
+  const [valueSearchBar, setSearchBar] = useState<string>("");
+  const [listCakeSearch, setListCakeSearch] = useState<ClassCake[]>([])
   
   useEffect(() => {
     // Fonction pour remplir listContainer
-    async function shop() {
-      const tempContainerList: JSX.Element[] = []; // Créer un tableau temporaire
 
+    console.log("Élément recherché: ", valueSearchBar);
+
+    if (valueSearchBar) {
+      const tempsCakeSearch: ClassCake[] = manager.listCake.filter((cake) =>
+          cake.title.toLowerCase().includes(valueSearchBar.toLowerCase()) || 
+          cake.content.toLowerCase().includes(valueSearchBar.toLowerCase())
+      );
+  
+      setListCakeSearch(tempsCakeSearch);
+    } else {
+      setListCakeSearch([]);
+    }
+
+    async function shop() {
+      const tempContainerList: JSX.Element[] = [];
+
+      if (listCakeSearch )
       for (const [categorie, cakes] of manager.categoryMap.entries()) {
-        //console.log(categorie, cakes)
         
         if (manager.categoryMap.get(categorie) !== undefined) {
           
@@ -35,10 +54,19 @@ const Shop =({}) => {
         }
       }
 
-      // Met à jour listContainer avec les nouveaux éléments
       setListContainer(tempContainerList);
     }
-    shop(); // Appeler la fonction après le montage
+    if (valueSearchBar && listCakeSearch.length > 0){
+      let tempsCake = []
+      for (const cake of listCakeSearch){
+        tempsCake.push(<ContainerCake cake={cake}/>)
+      }
+      setListContainer(tempsCake)
+    }else {
+      shop();
+    }
+      
+
     if (manager.listCake.length <= 0){
       setListContainer([<div key="error" className="error">
         <p>Il se trouve que notre site a été surchargé, veuillez changer de page ou cliquer sur le bouton Acutaliser. Si le problème persiste, merci de revenir plus tard.</p>
@@ -47,7 +75,7 @@ const Shop =({}) => {
     }
     
     
-  }, []); // Le tableau vide signifie que useEffect s'exécute une seule fois
+  }, [valueSearchBar]); // Le tableau vide signifie que useEffect s'exécute une seule fois
     
     return (
       <div>
@@ -56,6 +84,7 @@ const Shop =({}) => {
         <div className="content">
           <h2>Voici mes gâteaux classés par catégories</h2>
           <p>Cliquez sur l'un d'entre eux pour afficher une liste de gâteaux de cette catégorie</p>
+          <SearchBar inValue={valueSearchBar} method={setSearchBar}/>
           <div className="all-container">
             {listContainer}
           </div>

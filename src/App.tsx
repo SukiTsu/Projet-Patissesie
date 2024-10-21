@@ -25,7 +25,7 @@ function App() {
           routes.push(
             <Route key={categorie} path={`/shop/${categorie}`} element={<ShopCategoryCake categoryCake={categorie} />}/>
           );
-          console.log("add: ",categorie)
+          //console.log("add: ",categorie)
         }
         setNewRoute(routes);
       }
