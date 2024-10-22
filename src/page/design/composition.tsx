@@ -10,8 +10,6 @@ const TEXTURE = [
   
 const SAVEUR = [
     { value: 'vanille', label: 'Vanille' },
-    { value: 'chocolat', label: 'Chocolat' },
-    { value: 'fraise', label: 'Fraise' },
     { value: 'chocolat-noir', label: 'Chocolat noir' },
     { value: 'chocolat-lait', label: 'Chocolat lait' },
     { value: 'chocolat-blanc', label: 'Chocolat blanc' },

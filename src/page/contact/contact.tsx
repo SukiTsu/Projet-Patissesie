@@ -20,8 +20,8 @@ const Contact =({}) => {
 
                 <div className="contact-hours">
                     <h2>Horaires de marché</h2>
-                    <p><strong>Mercredi Viarmes:</strong> 8h00 - 13h00</p>
-                    <p><strong>Samedi L'isle Adam:</strong> 8h00 - 13h00</p>
+                    <p><strong>Mercredi à Viarmes:</strong> 8h00 - 13h00</p>
+                    <p><strong>Samedi à L'isle Adam:</strong> 8h00 - 13h00</p>
                 </div>
             </div>
 

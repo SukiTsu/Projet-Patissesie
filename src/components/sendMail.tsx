@@ -22,7 +22,7 @@ const SendMail: React.FC<Props> = ({formData}) => {
 
   return (
     <form onSubmit={handleSendEmail}>
-        <p>Ouvire la boîte mail avec un contenu déjà remplit pour l'envoie de la commande ?</p>
+        <p>Ouvrir la boîte mail avec un contenu déjà remplit pour l'envoie de la commande ?</p>
         <button type="submit" className='bt send-mail'>Ouvrir la boîte mail</button>
     </form>
   );
