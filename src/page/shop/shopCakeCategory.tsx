@@ -4,6 +4,7 @@ import ContainerCake from "../../components/containerCake";
 import Footer from "../../components/footer";
 import manager from "./getData";
 import ChangeStyleSaison from "../../components/changeStyleSaison";
+import { Link } from "react-router-dom";
 
 interface Props{
     categoryCake:string
@@ -27,6 +28,7 @@ const ShopCategoryCake:React.FC<Props> =({ categoryCake="rollcake" }) => {
         <Navbar/>
         <ChangeStyleSaison />
         <div className="content">
+          <Link to="/shop"><button className="bt retour">Retour</button></Link>
           <h2>Cliquez sur l'un d'entre eux pour l'afficher en détails</h2>
           <div className="all-container-cake">
               {htmlCake}
