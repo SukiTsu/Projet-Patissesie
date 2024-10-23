@@ -8,6 +8,7 @@ const url = `https://graph.facebook.com/v21.0/122096825252577148?fields=id%2Cpos
 export class CategoryManager {
   listCake: ClassCake[] = [];
   categoryMap: Map<string, Set<ClassCake>> = new Map();
+  nbData:Number = 0
 
   addClassCake(cake: ClassCake): void {
       this.listCake.push(cake);
@@ -37,18 +38,24 @@ export class CategoryManager {
       }
       const dataInsta = await response.json();
       const globalData = dataInsta.posts.data;
-  
-      for (let i = 0; i < globalData.length; i++) {
-        if (globalData[i].full_picture !== undefined && globalData[i].message !== undefined) {
-          const tempDescription = globalData[i].message;
-          const titleContentHastag = extractAndRemoveHashtagsAndBrackets(tempDescription);
-          
-          const cake = new ClassCake(titleContentHastag.title[0], globalData[i].full_picture, titleContentHastag.cleanedContent, titleContentHastag.categories);
-          manager.addClassCake(cake);
-        } else {
-          console.log("problème de lien ou de contenu");
+      if (this.nbData != globalData.length){
+        this.nbData = globalData.length
+        for (let i = 0; i < globalData.length; i++) {
+          if (globalData[i].full_picture !== undefined && globalData[i].message !== undefined) {
+            const tempDescription = globalData[i].message;
+            const titleContentHastag = extractAndRemoveHashtagsAndBrackets(tempDescription);
+            
+            const cake = new ClassCake(titleContentHastag.title[0], globalData[i].full_picture, titleContentHastag.cleanedContent, titleContentHastag.categories);
+            manager.addClassCake(cake);
+          } else {
+            console.log("problème de lien ou de contenu");
+          }
         }
+      }else{
+        console.log("data is ready")
       }
+        
+        
     } catch (error) {
       console.error('Erreur lors de la récupération des données:', error);
       

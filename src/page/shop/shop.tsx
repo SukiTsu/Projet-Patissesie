@@ -12,70 +12,114 @@ import ContainerCake from "../../components/containerCake";
 
 const Shop =({}) => {
   const [listContainer, setListContainer] = useState<JSX.Element[]>([]);
-  const [valueSearchBar, setSearchBar] = useState<string>("");
-  const [listCakeSearch, setListCakeSearch] = useState<ClassCake[]>([])
-  
+  const [valueSearchBar, setSearchBar] = useState<string>('');
+  const [listCakeSearch, setListCakeSearch] = useState<ClassCake[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [allCake, setAllCake] = useState<JSX.Element[]>([]);
+
+  /**
+   * Génère une liste containeur des cakes trié selon leurs catégory. Lorsqu'ils sont cliqué, il redirige vers un lien permettant l'affichage de tout les cakes de la catégory
+   * @returns Composant JSX 
+   */
+  async function generaContainerCake() {
+    console.log("appel du shop")
+    const tempContainerList: JSX.Element[] = [];
+
+    for (const [categorie, cakes] of manager.categoryMap.entries()) {
+      if (manager.categoryMap.get(categorie) !== undefined) {
+        let i = 0;
+        const iterator = cakes.values();
+        let result = iterator.next();
+        let tabImg = [];
+
+        while (!result.done && i < 4) {
+          tabImg.push(result.value.imgSrc);
+          result = iterator.next();
+          i++;
+        }
+        const container = (
+          <ContainerGroupCake
+            key={categorie}
+            srcImgs={tabImg}
+            link={categorie}
+            title={categorie}
+          />
+        );
+        tempContainerList.push(container);
+      }
+    }
+    return (tempContainerList);
+  }
+
+  /**
+   * Lors du chargement de la page, vérifie que les données sont bien à jour
+   */
   useEffect(() => {
-    // Fonction pour remplir listContainer
+    // Si les données ne sont pas encore chargées, on les récupère
+    if (manager.listCake.length === 0) {
+      console.log('Les données ne sont pas chargées, tentative de fetch...');
+      fetchData(true);
+    } else {
+      fetchData(false); // Les données sont déjà disponibles
+    }
+  }, []);
 
-    console.log("Élément recherché: ", valueSearchBar);
-
-    if (valueSearchBar) {
-      const tempsCakeSearch: ClassCake[] = manager.listCake.filter((cake) =>
+  /**
+   * Généation d'une liste de cake corrrespondant à la recherche de l'utilistateur
+   */
+  useEffect(() => {
+    if (!isLoading) {
+      
+      if (valueSearchBar) {
+        const tempCakeSearch: ClassCake[] = manager.listCake.filter((cake) =>
           cake.title.toLowerCase().includes(valueSearchBar.toLowerCase()) || 
           cake.content.toLowerCase().includes(valueSearchBar.toLowerCase())
-      );
-  
-      setListCakeSearch(tempsCakeSearch);
-    } else {
-      setListCakeSearch([]);
-    }
+        );
+        setListCakeSearch(tempCakeSearch);
+      } else {
+        setListCakeSearch([]);
+      }
 
-    async function shop() {
-      const tempContainerList: JSX.Element[] = [];
-
-      if (listCakeSearch )
-      for (const [categorie, cakes] of manager.categoryMap.entries()) {
-        
-        if (manager.categoryMap.get(categorie) !== undefined) {
-          
-          let i = 0
-          const iterator = cakes.values()
-          let result = iterator.next()
-          let tabImg = []
-
-          while (!result.done && i<4) {
-            tabImg.push(result.value.imgSrc)
-            result = iterator.next()
-            i++
-          }
-          const container = <ContainerGroupCake key={categorie} srcImgs={tabImg} link={categorie} title={categorie}/>
-          tempContainerList.push(container)
+      if (valueSearchBar && listCakeSearch.length > 0) {
+        let tempCake = [];
+        for (const cake of listCakeSearch) {
+          tempCake.push(<ContainerCake cake={cake} />);
         }
+        setListContainer(tempCake);
+      } else {
+        setListContainer(allCake);
       }
 
-      setListContainer(tempContainerList);
-    }
-    if (valueSearchBar && listCakeSearch.length > 0){
-      let tempsCake = []
-      for (const cake of listCakeSearch){
-        tempsCake.push(<ContainerCake cake={cake}/>)
+      if (manager.listCake.length <= 0) {
+        setListContainer([
+          <div key="error" className="error">
+            <p>
+              Il se trouve que notre site a été surchargé, veuillez changer de
+              page ou cliquer sur le bouton Acutaliser. Si le problème persiste,
+              merci de revenir plus tard.
+            </p>
+            <button onClick={generaContainerCake} className="bt actualise">
+              Actualiser
+            </button>
+          </div>,
+        ]);
       }
-      setListContainer(tempsCake)
-    }else {
-      shop();
     }
-      
+  }, [valueSearchBar, isLoading]);
 
-    if (manager.listCake.length <= 0){
-      setListContainer([<div key="error" className="error">
-        <p>Il se trouve que notre site a été surchargé, veuillez changer de page ou cliquer sur le bouton Acutaliser. Si le problème persiste, merci de revenir plus tard.</p>
-        <button onClick={shop} className="bt actualise">Actualiser</button>
-        </div>])
-    }
-    
-    
-  }, [valueSearchBar]);
+  /**
+   * Attribu à la variable allCake toute la liste des containercake pour évité de la regéné à chaque fois que la valeur de la navbar change
+   * @param shearchData si true, le manager doit générer ses données depuis API Facebook
+   */
+  const fetchData = async (shearchData:boolean) => {
+    if (shearchData) {await manager.fetchData(); }
+    setAllCake(await generaContainerCake())
+    setIsLoading(false); // Une fois les données chargées
+  };
+
+  if (isLoading) {
+    return <p>Chargement en cours...</p>; // Affichage temporaire
+  }
     
     return (
       <div>
