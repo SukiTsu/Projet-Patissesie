@@ -24,11 +24,20 @@ const Design =({}) => {
     const [choixNombrePersonne,setChoixNombrePersonne] = useState("8")
     const [motsClients,setMotsClients] = useState("")
 
+    const [isCheck, setIsCheck] = useState(() => {
+        const saved = localStorage.getItem('toggleState');
+        return saved !== null ? JSON.parse(saved) : false;
+      });
+    
+      const handleCheckChange = (newState: boolean | ((prevState: boolean) => boolean)) => {
+          setIsCheck(newState);
+      };
+
     return(
-        <div>
+        <div className={`${isCheck ? 'festive' : 'seasonal'} body`}>
             <Navbar/>
-            <ChangeStyleSaison />
-            <div className="content">
+            <ChangeStyleSaison onCheckChange={setIsCheck}/>
+            <div className={`${isCheck ? 'festive' : 'seasonal'} content`}>
                 <h1>Pesonnalisez votre cake</h1>
                 <p>Ici, vous pouvez personnaliser votre Cake-Design grâce à ce formulaire ci-dessous. Une fois rempli, cliquer sur le bouton "Afficher un devis" pour ainsi obtenir un devis.
                 Faites une capture d'écran pour faciliter notre prochain échange

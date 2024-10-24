@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import cirtrouille from '../assets/citrouille.png'
 
-const ChangeStyleSaison: React.FC = () => {
+interface Props{
+  onCheckChange: (values: boolean) => void;
+}
+
+const ChangeStyleSaison: React.FC<Props> = ({onCheckChange}) => {
   const [isAutumn, setIsAutumn] = useState(false);
 
   // Toggle état sauvegardé dans le localStorage
@@ -12,7 +16,11 @@ const ChangeStyleSaison: React.FC = () => {
 
   // Fonction de mise à jour du toggle
   const checkCase = () => {
-    setIsCheck((prevState: any) => !prevState);
+    setIsCheck((prevState: any) => {
+      const newState = !prevState;
+      onCheckChange(newState); // Inform the parent about the change
+      return newState;
+    });
   };
 
   // Sauvegarde du toggle dans le localStorage à chaque changement
@@ -34,19 +42,13 @@ const ChangeStyleSaison: React.FC = () => {
   useEffect(() => {
     setIsAutumn(checkIfAutumn());
 
-    const loadCSS = async () => {
+    const loadCSS = () => {
       if (checkIfAutumn()) {
-        // Si le toggle est activé, charger le style festif (Halloween)
-        if (isCheck) {
-          await import('../assets/style/global/styleHalloween.css')
-        } else {
-          // Sinon, charger le style classique de la saison (automne)
-          await import('../assets/style/global/styleAutome.css');
-        }
+          import('../assets/style/global/styleHalloween.css')
+          import('../assets/style/global/styleAutome.css');
       }
-    };
-
-    loadCSS();
+    }
+  loadCSS();
   }, [isCheck]); 
   
   return (

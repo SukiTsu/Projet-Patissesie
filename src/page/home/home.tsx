@@ -1,13 +1,24 @@
+import { useState } from "react";
 import ChangeStyleSaison from "../../components/changeStyleSaison"
 import Footer from "../../components/footer"
 import Navbar from "../../components/navbar"
 
 const Home =({}) => {
+    const [isCheck, setIsCheck] = useState(() => {
+        const saved = localStorage.getItem('toggleState');
+        return saved !== null ? JSON.parse(saved) : false;
+    });
+
+    const handleCheckChange = (newState: boolean | ((prevState: boolean) => boolean)) => {
+        setIsCheck(newState);
+    };
+    
+  
     return(
-        <div className="container">
+        <div className={`${isCheck ? 'festive' : 'seasonal'} body`}>
             <Navbar/>
-            <ChangeStyleSaison />
-            <div className="content">
+            <ChangeStyleSaison onCheckChange={handleCheckChange}/>
+            <div className={`${isCheck ? 'festive' : 'seasonal'} content`}>
             <h2>Bienvenue dans mon univers gourmand !</h2>
             <p>Depuis toute petite, la pâtisserie est pour moi une véritable passion. 
                 Après avoir passé des années à m'amuser avec les enfants dans des centres de loisirs, j’ai décidé de me lancer pleinement dans l’art sucré, notamment lors du confinement. 

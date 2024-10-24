@@ -17,12 +17,21 @@ const Shop =({}) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [allCake, setAllCake] = useState<JSX.Element[]>([]);
 
+  const [isCheck, setIsCheck] = useState(() => {
+    const saved = localStorage.getItem('toggleState');
+    return saved !== null ? JSON.parse(saved) : false;
+  });
+
+  const handleCheckChange = (newState: boolean | ((prevState: boolean) => boolean)) => {
+      setIsCheck(newState);
+  };
+
   /**
    * Génère une liste containeur des cakes trié selon leurs catégory. Lorsqu'ils sont cliqué, il redirige vers un lien permettant l'affichage de tout les cakes de la catégory
    * @returns Composant JSX 
    */
   async function generaContainerCake() {
-    console.log("appel du shop")
+    //console.log("appel du shop")
     const tempContainerList: JSX.Element[] = [];
 
     for (const [categorie, cakes] of manager.categoryMap.entries()) {
@@ -122,10 +131,10 @@ const Shop =({}) => {
   }
     
     return (
-      <div>
+      <div className={`${isCheck ? 'festive' : 'seasonal'} body`}>
         <Navbar/>
-        <ChangeStyleSaison />
-        <div className="content">
+        <ChangeStyleSaison onCheckChange={handleCheckChange}/>
+        <div className={`${isCheck ? 'festive' : 'seasonal'} content`}>
           <h2>Voici mes gâteaux classés par catégories</h2>
           <p>Cliquez sur l'un d'entre eux pour afficher une liste de gâteaux de cette catégorie</p>
           <SearchBar inValue={valueSearchBar} method={setSearchBar}/>

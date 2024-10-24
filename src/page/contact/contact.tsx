@@ -2,13 +2,24 @@ import ChangeStyleSaison from "../../components/changeStyleSaison"
 import Footer from "../../components/footer"
 import Navbar from "../../components/navbar"
 import '../../assets/style/styleContact.css'
+import { useState } from "react"
 
 const Contact =({}) => {
+
+    const [isCheck, setIsCheck] = useState(() => {
+        const saved = localStorage.getItem('toggleState');
+        return saved !== null ? JSON.parse(saved) : false;
+    });
+
+    const handleCheckChange = (newState: boolean | ((prevState: boolean) => boolean)) => {
+        setIsCheck(newState);
+    };
+
     return(
-        <div>
+        <div className={`${isCheck ? 'festive' : 'seasonal'} body`}>
             <Navbar/>
-            <ChangeStyleSaison />
-            <div className="content">
+            <ChangeStyleSaison onCheckChange={handleCheckChange}/>
+            <div className={`${isCheck ? 'festive' : 'seasonal'} content`}>
             <h1 className="contact-title">Contactez-nous</h1>
             <div className="contact-info">
                 <div className="contact-details">
