@@ -5,6 +5,7 @@ import Footer from "../../components/footer";
 import manager from "./getData";
 import ChangeStyleSaison from "../../components/changeStyleSaison";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 interface Props{
     categoryCake:string
@@ -17,17 +18,26 @@ interface Props{
  */
 const ShopCategoryCake:React.FC<Props> =({ categoryCake="rollcake" }) => {
     const listCake = manager.categoryMap.get(categoryCake)
-    //console.log(listCake)
     let htmlCake = []
+
+    const [isCheck, setIsCheck] = useState(() => {
+      const saved = localStorage.getItem('toggleState');
+      return saved !== null ? JSON.parse(saved) : false;
+    });
+  
+    const handleCheckChange = (newState: boolean | ((prevState: boolean) => boolean)) => {
+        setIsCheck(newState);
+    };
+
     if (listCake)
     for (const cake of listCake){
         htmlCake.push(<ContainerCake key={cake.title} cake={cake}/>)
     }
     return (
-      <div className="shop-page">
+      <div className={`${isCheck ? 'festive' : 'seasonal'} body`}>
         <Navbar/>
-        <ChangeStyleSaison />
-        <div className="content">
+        <ChangeStyleSaison onCheckChange={handleCheckChange}/>
+        <div className={`${isCheck ? 'festive' : 'seasonal'} content`}>
           <Link to="/shop"><button className="bt retour">Retour</button></Link>
           <h2>Cliquez sur l'un d'entre eux pour l'afficher en détails</h2>
           <div className="all-container-cake">
