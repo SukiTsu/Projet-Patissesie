@@ -18,7 +18,7 @@ const ContainerGroupCake:React.FC<Props> = ({ srcImgs, link, title }) =>{
             <Link to={newLink}>
                 <div className={`image-box image-count-${srcImgs.length}`}>
                     {srcImgs.map((src, index) => (
-                        <img src={src} alt={`Image ${index + 1}`} key={index} />
+                        <img src={src} alt={`Image ${srcImgs}`} key={index} />
                     ))}
                 </div>
                 <h2>{title}</h2>

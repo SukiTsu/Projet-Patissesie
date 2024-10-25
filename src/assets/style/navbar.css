@@ -23,6 +23,10 @@
     margin: 0;
 }
 
+.navbar-menu li:last-child {
+    border-bottom: 1px solid #ececec;;
+}
+
 .navbar-menu a {
     color: white;
     text-decoration: none;

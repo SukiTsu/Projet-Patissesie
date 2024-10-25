@@ -42,9 +42,9 @@ li {
     border-bottom: 1px solid #ececec; /* Ligne fine entre les éléments pour l'effet de liste */
 }
 
-li:last-child {
-    border-bottom: none; /* Supprimer la dernière ligne */
-}
+/*li:last-child {
+    border-bottom: none; 
+}*/
 
 .rendu-text h3::after {
     content: '';
