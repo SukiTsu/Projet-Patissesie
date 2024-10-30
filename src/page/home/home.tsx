@@ -43,11 +43,11 @@ const Home =({}) => {
             <div className={`${isCheck ? 'festive' : 'seasonal'} intro`}>
                 <div className="intro-content">
                     <div className="intro-text">
-                        <h2>Des pâtisseries pour toute la famille </h2>
+                        <h2>Pâtisseries pour toute la famille </h2>
                         <p>Je propose des gourmandises pour petits et grands, avec une attention particulière à la qualité des ingrédients et à un dosage équilibré en sucre. 
                         Mes créations sont moins sucrées que celles du commerce classique, mais tout aussi gourmandes !</p>
                      
-                        <h2>Ateliers Pâtisserie pour les curieux </h2>
+                        <h2>Ateliers pour les curieux </h2>
                         <p>En plus de la vente, je propose des ateliers pâtisserie où vous pourrez, en famille ou entre amis, apprendre à réaliser vos propres créations sous ma supervision. 
                         Un moment ludique et créatif pour tous !
                         </p>

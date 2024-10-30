@@ -5,7 +5,7 @@
     align-items: center;
     padding: 0 20px;
     background-color: #333;
-    height: 100px;
+    height: 80px;
 }
 
 .navbar-logo {
@@ -27,7 +27,7 @@
 .navbar-menu a {
     color: white;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 18px;
     display: flex;
     align-items: center;
     padding: 0 20px;
@@ -42,7 +42,7 @@
 .navbar-contact a {
     color: white;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 18px;
     display: flex;
     align-items: center;
     padding-left: 20px;
