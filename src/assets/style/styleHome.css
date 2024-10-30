@@ -6,92 +6,167 @@
     --couleur-lien: #2980b9;
 }
 
-
-/* Paragraphes */
-p {
-    margin-bottom: 1.5em;
+.all-intro{
+    margin: 40px;
 }
 
-/* Listes d'ingrédients */
-ul {
-    list-style-type: none;
-    padding: 0;
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-li {
-    background: var(--couleur-primaire);
-    margin: 0.5em 0;
-    padding: 10px;
-    border-radius: 5px;
+.intro-banner img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    margin-bottom: 20px;
 }
 
-/* Images */
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px; /* Arrondir les coins des images */
-    margin-bottom: 1em;
+.intro-content {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
 }
 
-/* Légendes d'images */
-figcaption {
-    font-style: italic;
+.intro-image, .intro-text {
+    display: flex;
+    flex: 1;
+    min-width: 300px;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-image {
+    flex: 0.3;
+}
+
+.intro-image.medium {
+    flex: 0.7;
+}
+
+.intro-image img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+}
+
+.intro-text {
+    flex: 1; /* Le texte occupe l'espace restant */
+    background-color: #f9e7e7;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
     text-align: center;
-    color: #777;
 }
 
-/* Boutons */
-button, .button {
-    background-color: var(--couleur-secondaire);
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
+.intro-text h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.intro-text h2 span {
+    color: #d5a6bd;
+}
+
+.intro-text p {
+    font-size: 30px;
+    color: #666;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+/* Styles pour les petits écrans */
+@media (max-width: 768px) {
+    .intro-content {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .intro-image, .intro-text {
+        flex: none;
+        width: 100%;
+        height: auto; /* Laisse les éléments se dimensionner automatiquement */
+    }
+
+    .intro-text {
+        padding: 15px;
+    }
+
+    .intro-text h2 {
+        font-size: 24px;
+    }
+
+    .intro-text p {
+        font-size: 14px;
+    }
+}
+
+.selection {
+    text-align: center;
+    margin: 40px 20px;
+}
+
+.selection h3 {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    width: calc(20% - 10px);
+    margin: 5px;
+}
+
+.gallery-item img {
+    width: 100%;
     border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
 }
 
-button:hover, .button:hover {
-    background-color: #c0392b; /* Couleur au survol */
+@media (max-width: 1024px) {
+    .gallery-item {
+        width: calc(25% - 10px); /* Passe à 4 éléments par ligne */
+    }
 }
 
-/* Liens */
-a {
-    color: var(--couleur-lien);
-    text-decoration: none;
+/* Pour les écrans de taille intermédiaire (tablettes en mode portrait) */
+@media (max-width: 768px) {
+    .selection h3 {
+        font-size: 20px; /* Réduit la taille du titre */
+    }
+    .gallery-item {
+        width: calc(33.33% - 10px); /* Passe à 3 éléments par ligne */
+    }
 }
 
-a:hover {
-    text-decoration: underline; /* Souligner au survol */
+/* Pour les petits écrans (téléphones mobiles) */
+@media (max-width: 576px) {
+    .selection h3 {
+        font-size: 18px; /* Réduit encore la taille du titre */
+    }
+    .gallery-item {
+        width: calc(50% - 10px); /* Passe à 2 éléments par ligne */
+    }
 }
 
-/* Sections de conseils */
-.conseils {
-    background-color: #f9e79f; /* Couleur de fond différente */
-    padding: 15px;
-    border-radius: 5px;
-    margin: 1.5em 0;
-}
-
-/* Commentaires */
-.commentaires {
-    border-top: 2px solid var(--couleur-primaire);
-    padding-top: 1em;
-    margin-top: 2em;
-}
-
-/* Réseaux sociaux */
-.social-icons {
-    margin-top: 1em;
-}
-
-.social-icons a {
-    margin-right: 10px;
-    font-size: 1.5em; /* Taille des icônes */
-    color: var(--couleur-texte);
-}
-
-.social-icons a:hover {
-    color: var(--couleur-secondaire);
+/* Pour les très petits écrans (téléphones en mode portrait très étroit) */
+@media (max-width: 400px) {
+    .gallery-item {
+        width: 100%; /* Passe à 1 élément par ligne */
+    }
 }

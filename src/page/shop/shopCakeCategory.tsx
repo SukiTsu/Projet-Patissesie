@@ -37,7 +37,7 @@ const ShopCategoryCake:React.FC<Props> =({ categoryCake="rollcake" }) => {
       <div className={`${isCheck ? 'festive' : 'seasonal'} body`}>
         <Navbar/>
         <ChangeStyleSaison onCheckChange={handleCheckChange}/>
-        <div className={`${isCheck ? 'festive' : 'seasonal'} content`}>
+        <div className={`${isCheck ? 'festive' : 'seasonal'} all-content`}>
           <Link to="/shop"><button className="bt retour">Retour</button></Link>
           <h2>Cliquez sur l'un d'entre eux pour l'afficher en détails</h2>
           <div className="all-container-cake">

@@ -134,11 +134,10 @@ const Shop =({}) => {
       <div className={`${isCheck ? 'festive' : 'seasonal'} body`}>
         <Navbar/>
         <ChangeStyleSaison onCheckChange={handleCheckChange}/>
-        <div className={`${isCheck ? 'festive' : 'seasonal'} content`}>
+        <div className={`${isCheck ? 'festive' : 'seasonal'} all-content`}>
           <h2>Voici mes gâteaux classés par catégories</h2>
-          <p>Cliquez sur l'un d'entre eux pour afficher une liste de gâteaux de cette catégorie</p>
           <SearchBar inValue={valueSearchBar} method={setSearchBar}/>
-          <div className="all-container">
+          <div className={`${isCheck ? 'festive' : 'seasonal'} all-container`}>
             {listContainer}
           </div>
         </div>

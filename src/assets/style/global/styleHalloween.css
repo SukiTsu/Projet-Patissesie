@@ -2,6 +2,7 @@
     --couleur-orange: #290202;
     --couleur-jaune: #cc3c18;
     --couleur-maron: #643602;
+    --couleur-h: white;
   }
   .festive.body {
     background: linear-gradient(to bottom, var(--couleur-orange), var(--couleur-jaune));
@@ -9,6 +10,16 @@
     /*overflow: hidden; Pour s'assurer que les feuilles ne sortent pas du cadre */
     margin: 0;
     
+  }
+  .festive h2 {
+    color: var(--couleur-orange);
+  }
+  .festive p, h1, h3 {
+    color: var(--couleur-orange);
+  }
+
+  .festive .intro-text{
+    color: var(--couleur-orange);
   }
     /* Feuilles qui tombent */
     @keyframes fall {
@@ -72,138 +83,148 @@
       border-radius: 12px;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     }
+
+    /*
+      SHOP
+    */
+.festive.all-content h2{
+  color: white;  
+}
+.festive.all-container h3{
+  color: white;
+}
     
-    /* Pour les tablettes (768px et moins) */
-    @media (max-width: 768px) {
-      .festive.content {
-        padding: 15px;
-        margin: 30px auto;
-        max-width: 90%;
-      }
-    
-      .festive.content::before {
-        top: -8px;
-        left: -8px;
-        width: calc(100% + 16px);
-        height: calc(100% + 16px);
-      }
+  /* Pour les tablettes (768px et moins) */
+  @media (max-width: 768px) {
+    .festive.content {
+      padding: 15px;
+      margin: 30px auto;
+      max-width: 90%;
     }
-    
-    /* Pour les petits écrans et smartphones (480px et moins) */
-    @media (max-width: 480px) {
-      .festive.content {
-        padding: 10px;
-        margin: 20px auto;
-        max-width: 95%;
-      }
-    
-      .festive.content::before {
-        top: -6px;
-        left: -6px;
-        width: calc(100% + 12px);
-        height: calc(100% + 12px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-    
-      .festive.content p {
-        font-size: 14px;
-      }
-    }
-    
   
-    .festive.content.h2{
-      color: var(--couleur-orange)
+    .festive.content::before {
+      top: -8px;
+      left: -8px;
+      width: calc(100% + 16px);
+      height: calc(100% + 16px);
     }
-    .container-groupe-cake{
-      background-color: var(--couleur-orange);
-      
-    }
-    .container-groupe-cake h2 {
-       color: var(--couleur-jaune);
-    }
-    .container-cake{
-      background-color: var(--couleur-orange);
-      
-    }
-    .container-cake h2 {
-       color: var(--couleur-jaune);
-    }
-    .container-cake p {
-      color: white;
-   }
+  }
   
-   .bt {
-    padding: 10px 20px;
+  /* Pour les petits écrans et smartphones (480px et moins) */
+  @media (max-width: 480px) {
+    .festive.content {
+      padding: 10px;
+      margin: 20px auto;
+      max-width: 95%;
+    }
+  
+    .festive.content::before {
+      top: -6px;
+      left: -6px;
+      width: calc(100% + 12px);
+      height: calc(100% + 12px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    .festive.content p {
+      font-size: 14px;
+    }
+  }
+  
+
+  .festive.content.h2{
+    color: var(--couleur-orange)
+  }
+  /*
+  .container-groupe-cake{
     background-color: var(--couleur-orange);
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    
+  }*/
+  .container-groupe-cake h2 {
+      color: var(--couleur-h);
   }
-  
-  .bt.modal-close-cake {
-    background-color: var(--couleur-jaune);
-    color: var(--couleur-maron);
+  .container-cake{
+    background-color: var(--couleur-orange);
+    
   }
-  .bt.modal-close-cake:hover {
-    background-color: var(--couleur-maron);
-    color: var(--couleur-jaune);
+  .container-cake h2 {
+      color: var(--couleur-jaune);
   }
-  
-  table, th, td {
-    border-bottom: var(--couleur-orange);
+  .container-cake p {
+    color: white;
   }
-  
-  /**
-    Toggle
-  */
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
-  
-  .input-toggle {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 34px;
-  }
-  
-  .slider:before {
-    display: none; /* On cache l'élément par défaut */
-  }
-  
-  .slider-image {
-    width: 30px; /* Ajuste la taille de l'image pour qu'elle rentre bien dans le slider */
-    height: 30px;
-    position: absolute;
-    /*left: 4px;*/
-    top: 50%;
-    transform: translateY(-50%);
-    transition: transform 0.4s ease;
-    border-radius: 50%; /* Pour donner une forme ronde */
-  }
-  
-  .input-toggle:checked + .slider {
-    background-color: var(--couleur-jaune);
-  }
-  
-  .input-toggle:checked + .slider .slider-image {
-    transform: translate(26px, -50%); 
-  }
-  
+
+  .bt {
+  padding: 10px 20px;
+  background-color: var(--couleur-orange);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bt.modal-close-cake {
+  background-color: var(--couleur-jaune);
+  color: var(--couleur-maron);
+}
+.bt.modal-close-cake:hover {
+  background-color: var(--couleur-maron);
+  color: var(--couleur-jaune);
+}
+
+table, th, td {
+  border-bottom: var(--couleur-orange);
+}
+
+/**
+  Toggle
+*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.input-toggle {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  display: none; /* On cache l'élément par défaut */
+}
+
+.slider-image {
+  width: 30px; /* Ajuste la taille de l'image pour qu'elle rentre bien dans le slider */
+  height: 30px;
+  position: absolute;
+  /*left: 4px;*/
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.4s ease;
+  border-radius: 50%; /* Pour donner une forme ronde */
+}
+
+.input-toggle:checked + .slider {
+  background-color: var(--couleur-jaune);
+}
+
+.input-toggle:checked + .slider .slider-image {
+  transform: translate(26px, -50%); 
+}

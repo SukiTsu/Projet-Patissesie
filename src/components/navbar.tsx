@@ -6,7 +6,7 @@ export default function Navbar() {
     return (
       <nav className="navbar">
 
-        <img src={cakeImage} alt="Logo" className="navbar-logo"/>
+        <img src={cakeImage} alt="Logo Atelier-Dharma" className="navbar-logo"/>
 
         <ul className="navbar-menu">
           <li>

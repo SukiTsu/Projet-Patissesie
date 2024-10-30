@@ -1,14 +1,32 @@
 .seasonal {
-  --couleur-orange: #cc3c18;
-  --couleur-jaune: #FFCC33;
-  --couleur-maron: #643602;
+  --couleur-jaune: #F3A93E;  
+  --couleur-orange: #E65830;
+  --couleur-rouge: #99271D;
+  --couleur-maron: #643D36;
+  --couleur-beige: #AB8673;
+  --couleur-h: var(--couleur-maron);
 }
 .seasonal.body {
-    background: linear-gradient(to bottom, var(--couleur-orange), var(--couleur-jaune));
+    background: linear-gradient(to bottom, var(--couleur-rouge), var(--couleur-jaune));
     position: relative;
     /*overflow: hidden; Pour s'assurer que les feuilles ne sortent pas du cadre */
     margin: 0;
     
+  }
+  .all-content{
+    margin: 20px;
+  }
+
+  .seasonal h1,p {
+    color: var(--couleur-beige);
+  }
+
+  .seasonal h1, h2, h3{
+    color: var(--couleur-h);
+  }
+
+  .seasonal .intro-text {
+    background-color: white
   }
   
   /* Feuilles qui tombent */
@@ -115,12 +133,13 @@
   .seasonal.content.h2{
     color: var(--couleur-orange)
   }
+  /*
   .container-groupe-cake{
     background-color: var(--couleur-orange);
     
-  }
+  }*/
   .container-groupe-cake h2 {
-     color: var(--couleur-jaune);
+     color: var(--couleur-h);
   }
   .container-cake{
     background-color: var(--couleur-orange);
