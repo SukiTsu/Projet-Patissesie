@@ -27,7 +27,7 @@ const ChangeStyleSaison: React.FC<Props> = ({onCheckChange}) => {
   }, [isCheck]);
 
   // Chargement des CSS en fonction de la saison et de l'état du toggle
-  useEffect(() => {
+  
     const currentDate = new Date();
     const month = currentDate.getMonth() + 1; // Mois (0 = janvier, donc on ajoute 1)
     let season: string;
@@ -47,27 +47,27 @@ const ChangeStyleSaison: React.FC<Props> = ({onCheckChange}) => {
 
     switch (season) {
       case "spring":
-        console.log("🌸 It's spring! Time to enjoy blooming flowers.");
+        //console.log("🌸 It's spring! Time to enjoy blooming flowers.");
         // Ajouter votre code spécifique au printemps ici
         break;
       case "summer":
-        console.log("☀️ It's summer! Perfect time for a beach trip.");
+        //console.log("☀️ It's summer! Perfect time for a beach trip.");
         // Ajouter votre code spécifique à l'été ici
         break;
       case "autumn":
-        console.log("🍂 It's autumn! Watch the leaves change colors.");
+        //console.log("🍂 It's autumn! Watch the leaves change colors.");
         import('../assets/style/global/festif/styleHalloween.css');
         import('../assets/style/global/season/styleAutome.css');
         break;
       case "winter":
-        console.log("❄️ It's winter! Stay warm and cozy.");
+        //console.log("❄️ It's winter! Stay warm and cozy.");
         import('../assets/style/global/festif/styleNoel.css');
         import('../assets/style/global/season/styleHiver.css');
         break;
       default:
         console.log("Unknown season!");
     }
-  },); 
+  
   
   return (
     <div>

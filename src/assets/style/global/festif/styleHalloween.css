@@ -21,23 +21,23 @@
 }
 
 .festive.body {
-  background-image: url('./backround/halloween.jpg');
+  background-image: url('../../../image/backround/halloween.jpg');
 }
 .festive .itemDrop{
-  background: url('./itemDrop/citrouille.png') no-repeat center center;
+  background: url('../../../image/itemDrop/citrouille.png') no-repeat center center;
 background-size: contain;
 }
 .festive .switch .slider-image{
-  background: url('./itemDrop/citrouille.png') no-repeat center center;
+  background: url('../../../image/itemDrop/citrouille.png') no-repeat center center;
 background-size: contain;
 }
   
 .festive.all-content .search-bar-container .img-search{
-  background: url("./itemDrop/citrouille.png") no-repeat center center;
+  background: url("../../../image/itemDrop/citrouille.png") no-repeat center center;
   background-size: contain;
 }
 .festive .container-groupe-cake .itemDeco{
-  background: url("./itemDeco/tasFeuille.png") no-repeat center center;
+  background: url("../../../image/itemDeco/tasFeuille.png") no-repeat center center;
   position: absolute;
   top: -120px;
   left: 50%;

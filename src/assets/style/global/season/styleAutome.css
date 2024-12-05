@@ -22,23 +22,23 @@
 }
  
 .seasonal.body .backround{
-  background-image: url('./backround/automePaysage.jpg');
+  background-image: url('../../../image/backround/automePaysage.jpg');
 }
 
 .seasonal .itemDrop{
-  background: url('./itemDrop/feuilleAutomne.png') no-repeat center center;
+  background: url('../../../image/itemDrop/feuilleAutomne.png') no-repeat center center;
   background-size: contain;
 }
 .seasonal .switch .slider-image{
-  background: url('./itemDrop/feuilleAutomne.png') no-repeat center center;
+  background: url('../../../image/itemDrop/feuilleAutomne.png') no-repeat center center;
 background-size: contain;
 }
 .seasonal.all-content .search-bar-container .img-search{
-  background: url("./itemDrop/feuilleAutomne.png") no-repeat center center;
+  background: url("../../../image/itemDrop/feuilleAutomne.png") no-repeat center center;
   background-size: contain;
 }
 .seasonal .container-groupe-cake .itemDeco{
-  background: url("./itemDeco/tasFeuille.png") no-repeat center center;
+  background: url("../../../image/itemDeco/tasFeuille.png") no-repeat center center;
   position: absolute;
   top: -120px;
   left: 50%;

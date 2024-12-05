@@ -22,23 +22,23 @@
   --couleur-slide-off: #1d4899;
 }
 .seasonal.body {
-  background-image: url('./backround/hiver.jpg');
+  background-image: url('../../../image/backround/hiver.jpg');
 }
   
 .seasonal .itemDrop{
-  background: url('./itemDrop/flocon.png') no-repeat center center;
+  background: url('../../../image/itemDrop/flocon.png') no-repeat center center;
   background-size: contain;
 }
 .seasonal .switch .slider-image{
-  background: url('./itemDrop/flocon.png') no-repeat center center;
+  background: url('../../../image/itemDrop/flocon.png') no-repeat center center;
 background-size: contain;
 }
 .seasonal.all-content .search-bar-container .img-search{
-  background: url("./itemDrop/flocon.png") no-repeat center center;
+  background: url("../../../image/itemDrop/flocon.png") no-repeat center center;
   background-size: contain;
 }
 .seasonal .container-groupe-cake .itemDeco{
-  background: url("./itemDeco/neige2.png") no-repeat center center;
+  background: url("../../../image/itemDeco/neige2.png") no-repeat center center;
   position: absolute;
   top: -120px;
   left: 50%;
