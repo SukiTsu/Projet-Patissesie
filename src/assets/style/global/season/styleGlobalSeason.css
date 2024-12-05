@@ -1,0 +1,201 @@
+.seasonal.body {
+  position: relative;
+  /*overflow: hidden; Pour s'assurer que les feuilles ne sortent pas du cadre */
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.all-content{
+    margin: 20px;
+}
+.seasonal .all-content h2{
+  color: var(--couleur-titre-vitrine);
+}
+.seasonal .all-content .titre-modal-cake{
+  color: var(--couleur-titre-modal-cake);
+}
+.seasonal .all-content .titre-modal-groupe{
+  color: var(--couleur-titre-modal-groupe);
+}
+.seasonal h1, h2 {
+    color: var(--couleur-titre);
+}
+
+.seasonal p,  h3{
+    color: var(--couleur-content-text);
+}
+
+.seasonal .intro-text {
+    background-color: white
+}
+.seasonal.content {
+      background: #fff;
+      padding: 20px;
+      margin: 40px auto;
+      max-width: 800px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-sizing: border-box;
+      position: relative;
+      color: var(--couleur-content-text);
+    }
+    
+    .seasonal.content p {
+      text-align: center;
+    }
+    
+    .seasonal.content::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      width: calc(100% + 20px);
+      height: calc(100% + 20px);
+      background: rgba(255, 255, 255, 0.5);
+      z-index: -1;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Pour les tablettes (768px et moins) */
+    @media (max-width: 768px) {
+      .seasonal.content {
+        padding: 15px;
+        margin: 30px auto;
+        max-width: 90%;
+      }
+    
+      .seasonal.content::before {
+        top: -8px;
+        left: -8px;
+        width: calc(100% + 16px);
+        height: calc(100% + 16px);
+      }
+    }
+    
+    /* Pour les petits écrans et smartphones (480px et moins) */
+    @media (max-width: 480px) {
+      .seasonal.content {
+        padding: 10px;
+        margin: 20px auto;
+        max-width: 95%;
+      }
+    
+      .seasonal.content::before {
+        top: -6px;
+        left: -6px;
+        width: calc(100% + 12px);
+        height: calc(100% + 12px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    
+      .seasonal.content p {
+        font-size: 14px;
+      }
+    }
+    
+  
+    .seasonal.content.h2{
+      color: var(--couleur-content-text)
+    }
+    /*
+    .container-groupe-cake{
+      background-color: var(--couleur-orange);
+      
+    }*/
+    .container-groupe-cake h2 {
+       color: var(--couleur-titre);
+    }
+    .container-cake{
+      background-color: var(--couleur-modal-cake);
+      
+    }
+    .container-cake h2 {
+       color: var(--couleur-titre);
+    }
+    .container-cake p {
+      color: white;
+   }
+   .container-groupe-cake {
+      background-color: var(--couleur-container-cake-transparent);
+   }
+  
+   .bt {
+    padding: 10px 20px;
+    background-color: var(--couleur-buton-retour-bk);
+    color: var(--couleur-buton-retour-txt);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .bt.modal-close-cake {
+    background-color: var(--couleur-buton-retour-bk);
+    color: var(--couleur-buton-retour-txt);
+  }
+  .bt.modal-close-cake:hover {
+    background-color: var(--couleur-maron);
+    color: var(--couleur-jaune);
+  }
+  
+  table, th, td {
+    border-bottom: var(--couleur-content-text);
+  }
+  
+  /**
+    Toggle
+  */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .input-toggle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--couleur-slide-off);
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    display: none; /* On cache l'élément par défaut */
+  }
+  
+  .slider-image {
+    width: 30px; /* Ajuste la taille de l'image pour qu'elle rentre bien dans le slider */
+    height: 30px;
+    position: absolute;
+    /*left: 4px;*/
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.4s ease;
+    border-radius: 50%; /* Pour donner une forme ronde */
+  }
+  
+  .input-toggle:checked + .slider {
+    background-color: var(--couleur-buton-retour-hover-bk);
+  }
+  
+  .input-toggle:checked + .slider .slider-image {
+    transform: translate(26px, -50%); 
+  }
+  

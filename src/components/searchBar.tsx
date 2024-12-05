@@ -1,5 +1,4 @@
 import '../assets/style/styleSearchBar.css'
-import image from '../assets/feuilleAutomne.png'
 
 interface Props {
     inValue:string
@@ -24,7 +23,7 @@ const SearchBar:React.FC<Props> = ({inValue,method}) => {
                 value={inValue}
                 onChange={handleSearchChange}
             />
-            <img src={image} alt="Autumn Leaf" />
+            <div className='img-search'/>
         </div>
     )
 }

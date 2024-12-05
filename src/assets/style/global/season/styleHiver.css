@@ -1,0 +1,50 @@
+.seasonal {
+  --couleur-top-background: #1d4899;
+  --couleur-bot-background:#fcfcfc;
+
+  --couleur-div-intro: #f1dddd;
+  --couleur-titre: #473a69;
+  --couleur-content-text:#6f6eaf;
+
+  --couleur-titre-vitrine: #1d4899;
+
+  --couleur-modal-cake:#1d4899;
+  --couleur-container-cake-transparent: rgb(34 58 139 / 38%);
+  --couleur-titre-modal-cake: #f1dddd;
+
+
+  --couleur-buton-retour-bk:#d6b830;
+  --couleur-buton-retour-txt:#290202;
+  --couleur-buton-retour-hover-bk:#d6b830;
+  --couleur-buton-retour-hover-txt:#f1dddd;
+
+  --couleur-titre-modal-groupe: #1d4899;
+  --couleur-slide-off: #1d4899;
+}
+.seasonal.body {
+  background-image: url('./backround/hiver.jpg');
+}
+  
+.seasonal .itemDrop{
+  background: url('./itemDrop/flocon.png') no-repeat center center;
+  background-size: contain;
+}
+.seasonal .switch .slider-image{
+  background: url('./itemDrop/flocon.png') no-repeat center center;
+background-size: contain;
+}
+.seasonal.all-content .search-bar-container .img-search{
+  background: url("./itemDrop/flocon.png") no-repeat center center;
+  background-size: contain;
+}
+.seasonal .container-groupe-cake .itemDeco{
+  background: url("./itemDeco/neige2.png") no-repeat center center;
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  max-width: none;
+}

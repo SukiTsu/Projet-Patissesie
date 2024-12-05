@@ -38,7 +38,7 @@ const ContainerCake:React.FC<Props> = ({ cake }) =>{
     return(
         <div className="container-cake" onClick={openModal} key={cake.title}>
             <img src={cake.imgSrc} alt={cake.title}/>
-            <h2>{cake.title}</h2>
+            <h2 className="titre-modal-cake">{cake.title}</h2>
         </div>
     )
 }

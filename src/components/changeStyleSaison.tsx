@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import cirtrouille from '../assets/citrouille.png'
 
 interface Props{
   onCheckChange: (values: boolean) => void;
 }
 
 const ChangeStyleSaison: React.FC<Props> = ({onCheckChange}) => {
-  const [isAutumn, setIsAutumn] = useState(false);
 
   // Toggle état sauvegardé dans le localStorage
   const [isCheck, setIsCheck] = useState(() => {
@@ -28,49 +26,71 @@ const ChangeStyleSaison: React.FC<Props> = ({onCheckChange}) => {
     localStorage.setItem('toggleState', JSON.stringify(isCheck));
   }, [isCheck]);
 
-  // Détection de la saison actuelle (automne ici)
-  const checkIfAutumn = () => {
-    const now = new Date();
-    const month = now.getMonth() + 1;
-    const day = now.getDate();
-
-    // Période d'automne : du 21 septembre au 21 décembre
-    return (month === 9 && day >= 21) || (month === 10) || (month === 11) || (month === 12 && day <= 21);
-  };
-
   // Chargement des CSS en fonction de la saison et de l'état du toggle
   useEffect(() => {
-    setIsAutumn(checkIfAutumn());
+    const currentDate = new Date();
+    const month = currentDate.getMonth() + 1; // Mois (0 = janvier, donc on ajoute 1)
+    let season: string;
 
-    const loadCSS = () => {
-      if (checkIfAutumn()) {
-          import('../assets/style/global/styleHalloween.css')
-          import('../assets/style/global/styleAutome.css');
-      }
+    if ((month >= 3 && month <= 5)) {
+        season = "spring";
+    } else if (month >= 6 && month <= 8) {
+        season = "summer";
+    } else if (month >= 9 && month <= 11) {
+        season = "autumn";
+    } else {
+        season = "winter";
     }
-  loadCSS();
-  }, [isCheck]); 
+    import('../assets/style/global/styleMouvement.css');
+    import('../assets/style/global/festif/styleGlobalFestif.css');
+    import('../assets/style/global/season/styleGlobalSeason.css');
+
+    switch (season) {
+      case "spring":
+        console.log("🌸 It's spring! Time to enjoy blooming flowers.");
+        // Ajouter votre code spécifique au printemps ici
+        break;
+      case "summer":
+        console.log("☀️ It's summer! Perfect time for a beach trip.");
+        // Ajouter votre code spécifique à l'été ici
+        break;
+      case "autumn":
+        console.log("🍂 It's autumn! Watch the leaves change colors.");
+        import('../assets/style/global/festif/styleHalloween.css');
+        import('../assets/style/global/season/styleAutome.css');
+        break;
+      case "winter":
+        console.log("❄️ It's winter! Stay warm and cozy.");
+        import('../assets/style/global/festif/styleNoel.css');
+        import('../assets/style/global/season/styleHiver.css');
+        break;
+      default:
+        console.log("Unknown season!");
+    }
+  },); 
   
   return (
     <div>
+      <div className={`${isCheck ? 'festive' : 'seasonal'}`}>
       <label className="switch">
         <input className="input-toggle" type="checkbox" checked={isCheck} onChange={checkCase} />
         <span className="slider">
-        <img src={cirtrouille}  alt="toggle image"  className="slider-image" />
+        <div  className="slider-image" />
         </span>
       </label>
-      {isAutumn && (
-        <>
-          <div className={isCheck? "citrouille" : "leaf"}></div>
-          <div className={isCheck? "citrouille" : "leaf"}></div>
-          <div className={isCheck? "citrouille" : "leaf"}></div>
-          <div className={isCheck? "citrouille" : "leaf"}></div>
-          <div className={isCheck? "citrouille" : "leaf"}></div>
-          <div className={isCheck? "citrouille" : "leaf"}></div>
-          <div className={isCheck? "citrouille" : "leaf"}></div>
-          <div className={isCheck? "citrouille" : "leaf"}></div>
-        </>
-      )}
+      </div>
+      
+      <div className={`${isCheck ? 'festive' : 'seasonal'}`}>
+        <div className="itemDrop"></div>
+        <div className="itemDrop"></div>
+        <div className="itemDrop"></div>
+        <div className="itemDrop"></div>
+        <div className="itemDrop"></div>
+        <div className="itemDrop"></div>
+        <div className="itemDrop"></div>
+        <div className="itemDrop"></div>
+      </div>
+     
     </div>
   );
 };

@@ -1,0 +1,50 @@
+.seasonal {
+  --couleur-top-background: #99271D;
+  --couleur-bot-background:#F3A93E;
+
+  --couleur-div-intro: #f1dddd;
+  --couleur-titre: #d6b830;
+  --couleur-content-text:#99271D;
+
+  --couleur-titre-vitrine: #99271D;
+
+  --couleur-modal-cake:#99271D;
+  --couleur-container-cake-transparent: rgba(181 11 11 / 68%);
+  --couleur-titre-modal-groupe: #d6b830;
+
+  --couleur-slide-off: #99271D;
+  --couleur-buton-retour-bk:#d6b830;
+  --couleur-buton-retour-txt:#290202;
+  --couleur-buton-retour-hover-bk:#d6b830;
+  --couleur-buton-retour-hover-txt:#f1dddd;
+
+  --couleur-h: var(--couleur-maron);
+}
+ 
+.seasonal.body .backround{
+  background-image: url('./backround/automePaysage.jpg');
+}
+
+.seasonal .itemDrop{
+  background: url('./itemDrop/feuilleAutomne.png') no-repeat center center;
+  background-size: contain;
+}
+.seasonal .switch .slider-image{
+  background: url('./itemDrop/feuilleAutomne.png') no-repeat center center;
+background-size: contain;
+}
+.seasonal.all-content .search-bar-container .img-search{
+  background: url("./itemDrop/feuilleAutomne.png") no-repeat center center;
+  background-size: contain;
+}
+.seasonal .container-groupe-cake .itemDeco{
+  background: url("./itemDeco/tasFeuille.png") no-repeat center center;
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  max-width: none;
+}

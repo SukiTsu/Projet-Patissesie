@@ -17,12 +17,12 @@ export default function Navbar(): JSX.Element {
             <ul className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
                 <li>
                     <Link to="/" className="link-navbar">
-                        <strong>Home</strong>
+                        <strong>Page d'acceuil</strong>
                     </Link>
                 </li>
                 <li>
                     <Link to="/shop" className="link-navbar">
-                        <strong>Shop</strong>
+                        <strong>Vitrine</strong>
                     </Link>
                 </li>
                 <li>

@@ -1,58 +1,36 @@
-.festive {
-    --couleur-orange: #290202;
-    --couleur-jaune: #cc3c18;
-    --couleur-maron: #643602;
-    --couleur-h: white;
-  }
-  .festive.body {
-    background: linear-gradient(to bottom, var(--couleur-orange), var(--couleur-jaune));
-    position: relative;
-    /*overflow: hidden; Pour s'assurer que les feuilles ne sortent pas du cadre */
-    margin: 0;
-    
-  }
+.festive.body {
+  position: relative;
+  /*overflow: hidden; Pour s'assurer que les feuilles ne sortent pas du cadre */
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.festive .all-content .titre-modal-groupe{
+  color: var(--couleur-titre-modal-groupe);
+}
+
+.festive .all-content .titre-modal-cake{
+  color: var(--couleur-titre-modal-cake);
+}
   .festive h2 {
-    color: var(--couleur-orange);
+    color: var(--couleur-titre);
+  }
+
+  .festive .all-content h2{
+    color: var(--couleur-titre-vitrine);
   }
   .festive p, h1, h3 {
-    color: var(--couleur-orange);
+    color: var(--couleur-content-text);
   }
 
   .festive .intro-text{
-    color: var(--couleur-orange);
+    background-color: var(--couleur-div-intro);
+    color: var(--couleur-content-text);
   }
-    /* Feuilles qui tombent */
-    @keyframes fall {
-      0% {
-        transform: translateY(-100px) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(90vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-    
-    
-    .citrouille {
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      background: url('../../citrouille.png') no-repeat center center;
-      background-size: contain;
-      animation: fall 8s infinite linear;
-      opacity: 0.9;
-    }
-    
-    /* Différentes tailles et animations pour des feuilles */
-    .citrouille:nth-child(1) { left: 10%; animation-duration: 6s; }
-    .citrouille:nth-child(2) { left: 20%; animation-duration: 8s; }
-    .citrouille:nth-child(3) { left: 30%; animation-duration: 7s; }
-    .citrouille:nth-child(4) { left: 40%; animation-duration: 9s; }
-    .citrouille:nth-child(5) { left: 50%; animation-duration: 8s; }
-    .citrouille:nth-child(6) { left: 60%; animation-duration: 10s; }
-    .citrouille:nth-child(7) { left: 70%; animation-duration: 7s; }
-    .citrouille:nth-child(8) { left: 80%; animation-duration: 11s; }
+  
     
     .festive.content {
       background: #fff;
@@ -64,7 +42,7 @@
       border-radius: 10px;
       box-sizing: border-box;
       position: relative;
-      color: var(--couleur-orange);
+      color: var(--couleur-content-text);
     }
     
     .festive.content p {
@@ -133,7 +111,7 @@
   
 
   .festive.content.h2{
-    color: var(--couleur-orange)
+    color: var(--couleur-content-text)
   }
   /*
   .container-groupe-cake{
@@ -144,11 +122,10 @@
       color: var(--couleur-h);
   }
   .container-cake{
-    background-color: var(--couleur-orange);
-    
+    background-color: var(--couleur-modal-cake);
   }
   .container-cake h2 {
-      color: var(--couleur-jaune);
+      color: var(--couleur-titre);
   }
   .container-cake p {
     color: white;
@@ -156,8 +133,8 @@
 
   .bt {
   padding: 10px 20px;
-  background-color: var(--couleur-orange);
-  color: #fff;
+  background-color: var(--couleur-buton-retour-bk);
+  color: var(--couleur-buton-retour-txt);
   border: none;
   border-radius: 4px;
   font-size: 16px;
@@ -166,16 +143,16 @@
 }
 
 .bt.modal-close-cake {
-  background-color: var(--couleur-jaune);
-  color: var(--couleur-maron);
+  background-color: var(--couleur-buton-retour-bk);
+  color: var(--couleur-buton-retour-txt);
 }
 .bt.modal-close-cake:hover {
-  background-color: var(--couleur-maron);
-  color: var(--couleur-jaune);
+  background-color: var( --couleur-buton-retour-hover-bk);
+  color: var(--couleur-buton-retour-hover-txt);
 }
 
 table, th, td {
-  border-bottom: var(--couleur-orange);
+  border-bottom: var(--couleur-content-text);
 }
 
 /**
@@ -201,7 +178,7 @@ table, th, td {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--couleur-slide-off);
   transition: 0.4s;
   border-radius: 34px;
 }
@@ -222,9 +199,19 @@ table, th, td {
 }
 
 .input-toggle:checked + .slider {
-  background-color: var(--couleur-jaune);
+  background-color: var(--couleur-buton-retour-hover-bk);
 }
 
 .input-toggle:checked + .slider .slider-image {
   transform: translate(26px, -50%); 
+}
+
+.festive.all-content .search-bar-container .search-bar{
+  background-color: var(--couleur-div-intro);
+  border: 2px solid var(--couleur-buton-retour-bk); 
+  color: var(--couleur-content-text); 
+}
+
+.festive.all-content .search-bar-container .search-bar::placeholder {
+  color: var(--couleur-content-text); /* Couleur marron clair pour le placeholder */
 }

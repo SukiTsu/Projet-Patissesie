@@ -8,24 +8,20 @@
 }
 
 .search-bar {
-    background-color: #f7d9a8; /* Couleur de fond automnale */
-    border: 2px solid #b5651d; /* Bordure brune rappelant la saison */
     border-radius: 30px;
     padding: 10px 15px;
     width: 100%;
     max-width: 400px; /* Limite la largeur à 400px */
     font-size: 1.2em;
-    color: #5c3d2e; /* Couleur du texte marron foncé */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour effet de profondeur */
     padding-right: 40px; /* Espace pour l'image à droite */
 }
 
 .search-bar::placeholder {
-    color: #8b4513; /* Couleur marron clair pour le placeholder */
     font-style: italic;
 }
 
-.search-bar-container img {
+.search-bar-container .img-search {
     position: relative;
     right: 15px; /* Positionne l'image à droite dans le conteneur */
     top: 50%;
