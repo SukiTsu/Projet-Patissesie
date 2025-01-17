@@ -4,6 +4,7 @@ import Footer from "../../components/footer"
 import Navbar from "../../components/navbar"
 import "../../assets/style/styleHome.css"
 import { Link } from "react-router-dom";
+import getLongLivedToken from "../dev/dev";
 
 const Home =({}) => {
     const [isCheck, setIsCheck] = useState(() => {
@@ -14,7 +15,8 @@ const Home =({}) => {
     const handleCheckChange = (newState: boolean | ((prevState: boolean) => boolean)) => {
         setIsCheck(newState);
     };
-    
+    //getLongLivedToken("EAAMxJHI6qfABOZC6zSGXgjBAQqgg3v7a0yFI00AlG0IVsLW3v1y9R4vlCJIEVwYnZB5ShIzDGAZAiBBoGa0iHAprbUDJIAKzNLw1SKJPZBIQATFGpAR6y2qztl3PjrWnTrfJaF0FI1KcAt9ZBpfCKyofQFgHULxUuZAjRV85x3TDxqnNZBak9pVVmv1v6fiZB0IWR4PiU0iuPsUNqlxqOXpqowbSoCsjajKkeyoqlWKqYJtjLng0fZB5bRyR5dEQGZAQZDZD","898457535162864","389a97304ada4edbf79998b6e72ee952")
+
   
     return(
         <div className={`${isCheck ? 'festive' : 'seasonal'} body`}>
