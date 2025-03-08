@@ -13,8 +13,9 @@
     width: 100%;
     max-width: 400px; /* Limite la largeur à 400px */
     font-size: 1.2em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour effet de profondeur */
+    box-shadow: 0 4px 8px rgba(89, 3, 33, 0.2); /* Ombre pour effet de profondeur */
     padding-right: 40px; /* Espace pour l'image à droite */
+    background-color: var(--couleur-container-cake-transparent);
 }
 
 .search-bar::placeholder {

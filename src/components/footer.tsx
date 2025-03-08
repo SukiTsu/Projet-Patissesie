@@ -9,9 +9,7 @@ const Footer =({}) => {
                     <h3>Nous suivre</h3>
                     <ul className="social-list">
                         <li><a href="https://www.facebook.com/profile.php?id=61567314448301">Facebook</a></li>
-                        <li><a href="/">TikTok</a></li>
                         <li><a href="https://www.instagram.com/atelier__dharma/">Instagram</a></li>
-                        <li><a href="/">LinkedIn</a></li>
                     </ul>
                 </div>
 

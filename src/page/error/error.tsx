@@ -16,7 +16,7 @@ const NotFound = () => {
 
   return (
     <div>
-        <Navbar />
+        <Navbar strTitre='Error'/>
         <ChangeStyleSaison onCheckChange={handleCheckChange}/>
         <div className={`${isCheck ? 'festive' : 'seasonal'} body`}>
            <h1>404 - Page non trouvé :(</h1>

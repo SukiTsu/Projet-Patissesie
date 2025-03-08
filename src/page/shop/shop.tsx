@@ -4,7 +4,6 @@ import Footer from "../../components/footer";
 import manager  from './getData';
 import { useState, useEffect, SetStateAction } from "react";
 import { JSX } from "react/jsx-runtime";
-import ChangeStyleSaison from "../../components/changeStyleSaison";
 import SearchBar from "../../components/searchBar";
 import { ClassCake } from "../../classCake";
 import ContainerCake from "../../components/containerCake";
@@ -17,14 +16,7 @@ const Shop =({}) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [allCake, setAllCake] = useState<JSX.Element[]>([]);
 
-  const [isCheck, setIsCheck] = useState(() => {
-    const saved = localStorage.getItem('toggleState');
-    return saved !== null ? JSON.parse(saved) : false;
-  });
-
-  const handleCheckChange = (newState: boolean | ((prevState: boolean) => boolean)) => {
-      setIsCheck(newState);
-  };
+ 
 
   /**
    * Génère une liste containeur des cakes trié selon leurs catégory. Lorsqu'ils sont cliqué, il redirige vers un lien permettant l'affichage de tout les cakes de la catégory
@@ -131,13 +123,12 @@ const Shop =({}) => {
   }
     
     return (
-      <div className={`${isCheck ? 'festive' : 'seasonal'} body`}>
-        <Navbar/>
-        <ChangeStyleSaison onCheckChange={handleCheckChange}/>
-        <div className={`${isCheck ? 'festive' : 'seasonal'} all-content`}>
+      <div className='seasonal body'>
+        <Navbar strTitre="Vitrine"/>
+        <div className='festive seasonal all-content'>
           <h2>Voici mes gâteaux classés par catégories</h2>
           <SearchBar inValue={valueSearchBar} method={setSearchBar}/>
-          <div className={`${isCheck ? 'festive' : 'seasonal'} all-container`}>
+          <div className='seasonal all-container'>
             {listContainer}
           </div>
         </div>

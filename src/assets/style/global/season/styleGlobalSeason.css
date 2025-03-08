@@ -28,9 +28,6 @@
     color: var(--couleur-content-text);
 }
 
-.seasonal .intro-text {
-    background-color: white
-}
 .seasonal.content {
       background: #fff;
       padding: 20px;

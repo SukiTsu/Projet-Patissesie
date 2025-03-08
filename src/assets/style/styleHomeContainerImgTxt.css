@@ -1,0 +1,90 @@
+.container-img-txt-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 90vw; /* Largeur relative à l'écran */
+    width: 100%;
+    padding: 2vw; /* Adapté aux grands et petits écrans */
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative; /* Permet de positionner les éléments internes */
+}
+
+.container-img-txt-image {
+    width: 100%;
+    max-width: 600px; /* Ajuste l'image à l'écran */
+    position: relative;
+}
+
+.container-img-txt-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.container-img-txt-text {
+    width: 50%;
+    padding: 20px;
+    position: relative;
+}
+
+.container-img-txt-left {
+    background-color: var(--couleur-top-background);
+    padding: 15px;
+    border-radius: 10px;
+    position: absolute;
+    top: -560px;
+    left: -10%;
+    width: 80%;
+}
+
+.container-img-txt h1 {
+    color: white;
+    font-weight: bold;
+}
+
+.container-img-txt-text p {
+    text-align: justify;
+
+}
+
+.container-img-txt-right {
+    background-color: var(--couleur-top-background);
+    padding: 15px;
+    border-radius: 10px;
+    position: absolute;
+    top: -360px;
+    width: 80%;
+    right: -90%;
+}
+
+.container-img-txt p {
+    font-size: 14px;
+    color: white;
+}
+@media (max-width: 650px) {
+    .container-img-txt-left{
+        top: -1200%;
+    }
+    .container-img-txt-right{
+        top: -700%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-img-txt-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-img-txt-text {
+        width: 80%;
+        max-width: none;
+        position: relative;
+        margin: 10px 0;
+    }
+
+    .container-img-txt-left, .container-img-txt-right {
+        position: static;
+    }
+}

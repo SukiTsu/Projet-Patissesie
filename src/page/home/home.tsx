@@ -1,10 +1,9 @@
 import { useState } from "react";
-import ChangeStyleSaison from "../../components/changeStyleSaison"
 import Footer from "../../components/footer"
 import Navbar from "../../components/navbar"
 import "../../assets/style/styleHome.css"
+import "../../assets/style/styleHomeContainerImgTxt.css"
 import { Link } from "react-router-dom";
-import getLongLivedToken from "../dev/dev";
 
 const Home =({}) => {
     const [isCheck, setIsCheck] = useState(() => {
@@ -12,34 +11,38 @@ const Home =({}) => {
         return saved !== null ? JSON.parse(saved) : false;
     });
 
-    const handleCheckChange = (newState: boolean | ((prevState: boolean) => boolean)) => {
-        setIsCheck(newState);
-    };
     //getLongLivedToken("EAAMxJHI6qfABOZC6zSGXgjBAQqgg3v7a0yFI00AlG0IVsLW3v1y9R4vlCJIEVwYnZB5ShIzDGAZAiBBoGa0iHAprbUDJIAKzNLw1SKJPZBIQATFGpAR6y2qztl3PjrWnTrfJaF0FI1KcAt9ZBpfCKyofQFgHULxUuZAjRV85x3TDxqnNZBak9pVVmv1v6fiZB0IWR4PiU0iuPsUNqlxqOXpqowbSoCsjajKkeyoqlWKqYJtjLng0fZB5bRyR5dEQGZAQZDZD","898457535162864","389a97304ada4edbf79998b6e72ee952")
 
   
     return(
         <div className={`${isCheck ? 'festive' : 'seasonal'} body`}>
-            <Navbar/>
-            <ChangeStyleSaison onCheckChange={handleCheckChange}/>
+            <Navbar strTitre="Acceuil"/>
             <div className="all-intro">
-            <div className={`${isCheck ? 'festive' : 'seasonal'} intro`}>
-                
-                <div className="intro-content">
-                    <div className="intro-image">
-                        <img src="./coockies.PNG" alt="Dada cookies" />
+            <div className='seasonal intro'>
+
+            <div className="container-img-txt">
+                <div className="container-img-txt-image">
+                    <img src="./coockies.PNG" alt="Illustration Podcast"/>
+                </div>
+                <div className="container-img-txt-text">
+                    <div className="container-img-txt-left">
+                        <h1>Atelier Dharma</h1>
+                        <p>Bienvenue dans mon univers gourmand !</p>
                     </div>
-                    <div className="intro-text">
-                        <h2>Bienvenue dans mon univers gourmand !</h2>
-                        <p>Depuis toute petite, la pâtisserie est pour moi une véritable passion. 
+                    <div className="container-img-txt-right">
+                        <p>
+                        Depuis toute petite, la pâtisserie est pour moi une véritable passion. 
                             Après avoir passé des années à m'amuser avec les enfants dans des centres de loisirs, j’ai décidé de me lancer pleinement dans l’art sucré, notamment lors du confinement. 
                             Ce moment m’a permis de perfectionner mes recettes et d'obtenir mon CAP Pâtisserie. 
                             Aujourd'hui, je partage avec vous mes créations artisanales, réalisées avec amour et des ingrédients naturels, principalement issus de producteurs français.
-                            </p>
-                            <p>Découvrez mes cookies signature <strong>"Dada Cookie"</strong>, mes <strong>gâteaux de voyage</strong> (muffins, sablés, quatre-quarts) et des <strong> layer cakes personnalisés</strong> pour toutes les occasions. 
-                            Que ce soit pour un anniversaire, une fête de famille, ou simplement pour vous faire plaisir, je suis là pour vous offrir des moments sucrés inoubliables !</p>
+                        </p>
                     </div>
                 </div>
+            </div>
+                
+                
+                {/**<p>Découvrez mes cookies signature <strong>"Dada Cookie"</strong>, mes <strong>gâteaux de voyage</strong> (muffins, sablés, quatre-quarts) et des <strong> layer cakes personnalisés</strong> pour toutes les occasions. 
+                            Que ce soit pour un anniversaire, une fête de famille, ou simplement pour vous faire plaisir, je suis là pour vous offrir des moments sucrés inoubliables !</p> */}
             
             </div>
             <div className={`${isCheck ? 'festive' : 'seasonal'} intro`}>

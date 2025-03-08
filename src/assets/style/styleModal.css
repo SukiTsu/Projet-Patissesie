@@ -23,3 +23,6 @@
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.titre-modal-groupe{
+    color: var(--couleur-titre-modal-groupe);
+}

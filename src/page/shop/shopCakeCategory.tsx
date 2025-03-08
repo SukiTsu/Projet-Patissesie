@@ -19,25 +19,16 @@ interface Props{
 const ShopCategoryCake:React.FC<Props> =({ categoryCake="rollcake" }) => {
     const listCake = manager.categoryMap.get(categoryCake)
     let htmlCake = []
-
-    const [isCheck, setIsCheck] = useState(() => {
-      const saved = localStorage.getItem('toggleState');
-      return saved !== null ? JSON.parse(saved) : false;
-    });
   
-    const handleCheckChange = (newState: boolean | ((prevState: boolean) => boolean)) => {
-        setIsCheck(newState);
-    };
 
     if (listCake)
     for (const cake of listCake){
         htmlCake.push(<ContainerCake key={cake.title} cake={cake}/>)
     }
     return (
-      <div className={`${isCheck ? 'festive' : 'seasonal'} body`}>
-        <Navbar/>
-        <ChangeStyleSaison onCheckChange={handleCheckChange}/>
-        <div className={`${isCheck ? 'festive' : 'seasonal'} all-content`}>
+      <div className='seasonal  body'>
+        <Navbar strTitre={`Vitrine ${categoryCake}`}/>
+        <div className='seasonal all-content'>
           <Link to="/shop"><button className="bt retour">Retour</button></Link>
           <h2>Cliquez sur l'un d'entre eux pour l'afficher en détails</h2>
           <div className="all-container-cake">

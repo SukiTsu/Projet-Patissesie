@@ -1,46 +1,32 @@
-import { Link } from "react-router-dom";
+import { useState } from 'react';
 import '../assets/style/navbar.css'
-import cakeImage from '../assets/logo.png';
-import { useState } from "react";
+import ItemDrop from './ItemDrop';
 
-export default function Navbar(): JSX.Element {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+interface Props{
+  strTitre:string
+}
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+const NavBarre:React.FC<Props> = ({strTitre}) => {
+  const [isOpen, setIsOpen] = useState(false);
 
     return (
+      <header className="header">
+        <ItemDrop />
         <nav className="navbar">
-            <img src={cakeImage} alt="Logo Atelier-Dharma" className="navbar-logo" />
-
-            <ul className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
-                <li>
-                    <Link to="/" className="link-navbar">
-                        <strong>Page d'acceuil</strong>
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/shop" className="link-navbar">
-                        <strong>Vitrine</strong>
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/cake-design" className="link-navbar">
-                        <strong>Cake-design</strong>
-                    </Link>
-                </li>
-            </ul>
-
-            <div className="navbar-contact">
-                <Link to="/contact" className="link-navbar">
-                    <strong>Contact</strong>
-                </Link>
-            </div>
-
-            <button className="menu-toggle" onClick={toggleMenu}>
-                &#9776;
-            </button>
+          <div className="burger-menu" onClick={() => setIsOpen(!isOpen)}>
+            ☰
+          </div>
+          <ul className={isOpen ? "nav-links open" : "nav-links"}>
+            <li><a href="/">Accueil</a></li>
+            <li><a href={`/shop`}>Vitrine</a></li>
+            <li><a href={`/cake-design`}>Cake Design</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
         </nav>
+        <h1>Atelier Dharma</h1>
+        <p>{strTitre}</p>
+      </header>
     );
-}
+  }
+
+  export default NavBarre;

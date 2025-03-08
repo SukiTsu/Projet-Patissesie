@@ -1,0 +1,83 @@
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #d81159;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  overflow: auto;
+  overflow-y: auto;
+  margin: 0px;
+}
+h2{
+  color: var(--couleur-titre);
+}
+.seasonal {
+    --couleur-top-background: #d81159;
+    --couleur-bot-background:#F3A93E;
+  
+    --couleur-div-intro: #f1dddd;
+    --couleur-titre: white*;
+    --couleur-content-text:white;
+  
+    --couleur-titre-vitrine: white;
+  
+    --couleur-modal-cake:#f578ae;
+    --couleur-container-cake-transparent: #f578ae;
+    --couleur-titre-modal-groupe: white;
+  
+    --couleur-slide-off: #99271D;
+    --couleur-buton-retour-bk:#d6b830;
+    --couleur-buton-retour-txt:#290202;
+    --couleur-buton-retour-hover-bk:#d6b830;
+    --couleur-buton-retour-hover-txt:#f1dddd;
+  
+    --couleur-h: var(--couleur-maron);
+  }
+
+  /**
+  .seasonal .container-groupe-cake .itemDeco{
+    background: url("../../../image/itemDeco/tasFeuille.png") no-repeat center center;
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    max-width: none;
+  }*/
+
+  .bt {
+    padding: 10px 20px;
+    background-color: white;
+    color: var(--couleur-buton-retour-txt);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .bt:hover{
+    background-color: var(--couleur-modal-cake);
+    color: white;
+  }
+  .bt.modal-close-cake {
+    background-color: white;
+    color: var(--couleur-buton-retour-txt);
+  }
+  .bt.modal-close-cake:hover {
+    background-color: var(--couleur-top-background);
+    color: white;
+  }
+  
+  table, th, td {
+    border-bottom: var(--couleur-content-text);
+  }

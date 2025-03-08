@@ -15,6 +15,7 @@
   /*Pour item Deco*/
   position: relative;
   /*overflow: visible;*/
+  background-color: var(--couleur-modal-cake);
 }
 
 /* Responsive pour les tablettes */

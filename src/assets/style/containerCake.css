@@ -12,6 +12,7 @@
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--couleur-modal-cake);
 }
 
 .container-cake:hover {
@@ -29,7 +30,7 @@
 .container-cake h2 {
     font-size: 1.5rem;
     margin: 15px 0 10px;
-    color: #333;
+    color: var(--couleur-titre-modal-groupe);
 }
 
 .container-cake .price {
