@@ -19,7 +19,7 @@ const SearchBar:React.FC<Props> = ({inValue,method}) => {
             <input
                 className="search-bar"
                 type="text"
-                placeholder="Rechercher un cake au chocolat..."
+                placeholder="Gâteau au chocolat..."
                 value={inValue}
                 onChange={handleSearchChange}
             />

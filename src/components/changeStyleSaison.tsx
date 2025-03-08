@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+/*import React, { useEffect, useState } from 'react';
 
 interface Props{
   onCheckChange: (values: boolean) => void;
@@ -96,3 +96,4 @@ const ChangeStyleSaison: React.FC<Props> = ({onCheckChange}) => {
 };
 
 export default ChangeStyleSaison;
+*/

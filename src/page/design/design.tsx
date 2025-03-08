@@ -11,7 +11,6 @@ import '../../assets/style/design/styleFourrage.css'
 import '../../assets/style/design/styleCouverture.css'
 import '../../assets/style/design/styleRendu.css'
 import '../../assets/style/design/styleFormulaire.css'
-import ChangeStyleSaison from "../../components/changeStyleSaison"
 import Textarea from "../../components/textArea"
 
 const Design =({}) => {

@@ -1,11 +1,8 @@
 import Navbar from "../../components/navbar";
-import dictionaryCake from "./getData";
 import ContainerCake from "../../components/containerCake";
 import Footer from "../../components/footer";
 import manager from "./getData";
-import ChangeStyleSaison from "../../components/changeStyleSaison";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 interface Props{
     categoryCake:string

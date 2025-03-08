@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Footer from "../../components/footer"
 import Navbar from "../../components/navbar"
 import "../../assets/style/styleHome.css"
@@ -6,16 +5,12 @@ import "../../assets/style/styleHomeContainerImgTxt.css"
 import { Link } from "react-router-dom";
 
 const Home =({}) => {
-    const [isCheck, setIsCheck] = useState(() => {
-        const saved = localStorage.getItem('toggleState');
-        return saved !== null ? JSON.parse(saved) : false;
-    });
 
     //getLongLivedToken("EAAMxJHI6qfABOZC6zSGXgjBAQqgg3v7a0yFI00AlG0IVsLW3v1y9R4vlCJIEVwYnZB5ShIzDGAZAiBBoGa0iHAprbUDJIAKzNLw1SKJPZBIQATFGpAR6y2qztl3PjrWnTrfJaF0FI1KcAt9ZBpfCKyofQFgHULxUuZAjRV85x3TDxqnNZBak9pVVmv1v6fiZB0IWR4PiU0iuPsUNqlxqOXpqowbSoCsjajKkeyoqlWKqYJtjLng0fZB5bRyR5dEQGZAQZDZD","898457535162864","389a97304ada4edbf79998b6e72ee952")
 
   
     return(
-        <div className={`${isCheck ? 'festive' : 'seasonal'} body`}>
+        <div className='seasonal body'>
             <Navbar strTitre="Acceuil"/>
             <div className="all-intro">
             <div className='seasonal intro'>
@@ -45,7 +40,7 @@ const Home =({}) => {
                             Que ce soit pour un anniversaire, une fête de famille, ou simplement pour vous faire plaisir, je suis là pour vous offrir des moments sucrés inoubliables !</p> */}
             
             </div>
-            <div className={`${isCheck ? 'festive' : 'seasonal'} intro`}>
+            <div className='seasonal intro'>
                 <div className="intro-content">
                     <div className="intro-text">
                         <h2>Pâtisseries pour toute la famille </h2>
@@ -66,7 +61,7 @@ const Home =({}) => {
                 </div>
             </div>
 
-            <div className={`${isCheck ? 'festive' : 'seasonal'} intro`}>
+            <div className='seasonal intro'>
                 <div className="intro-content">
                     <div className="intro-image medium">
                         <img src="./camion.jpg" alt="Image de gâteau" />
@@ -80,7 +75,7 @@ const Home =({}) => {
             </div>
             
 
-            <div className={`${isCheck ? 'festive' : 'seasonal'} intro`}>
+            <div className='seasonal intro'>
                 <div className="intro-content">
                     <div className="intro-text">
                         <h2>Envie de découvrir mes créations ?</h2>

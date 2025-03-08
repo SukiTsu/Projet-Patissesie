@@ -1,15 +1,13 @@
-import ChangeStyleSaison from "../../components/changeStyleSaison"
 import Footer from "../../components/footer"
 import Navbar from "../../components/navbar"
 import '../../assets/style/styleContact.css'
-import { useState } from "react"
 
 const Contact =({}) => {
 
     return(
-        <div className='seasonal body>'>
+        <div className='seasonal body'>
             <Navbar strTitre="Contact"/>
-            <div className='seasonal content'>
+            <div className='seasonal contact'>
             <h1 className="contact-title">Contactez-nous</h1>
             <div className="contact-info">
                 <div className="contact-details">

@@ -6,6 +6,10 @@ color: #d92062;
 margin-bottom: 20px;
 }
 
+.contact{
+    background-color: white;
+}
+
 /* Informations de contact */
 .contact-info {
 display: flex;

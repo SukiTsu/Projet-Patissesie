@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './page/home/home';
 import Shop from './page/shop/shop';
-import Blog from './page/blog/blog';
 import Contact from './page/contact/contact';
 import ShopCategoryCake from './page/shop/shopCakeCategory';
 import manager from "./page/shop/getData";
@@ -39,7 +38,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         {newRoute}
-        <Route path="/blog" element={<Blog />} />
         <Route path="/cake-design" element={<Design />}/>
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
