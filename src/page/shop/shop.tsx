@@ -7,6 +7,7 @@ import { JSX } from "react/jsx-runtime";
 import SearchBar from "../../components/searchBar";
 import { ClassCake } from "../../classCake";
 import ContainerCake from "../../components/containerCake";
+import AnimatedOnScroll from "../../components/Animation";
 
 
 const Shop =({}) => {
@@ -39,12 +40,14 @@ const Shop =({}) => {
           i++;
         }
         const container = (
+          <AnimatedOnScroll repeat={false} duration={i/2} children={
           <ContainerGroupCake
             key={categorie}
             srcImgs={tabImg}
             link={categorie}
             title={categorie}
           />
+          }/>
         );
         tempContainerList.push(container);
       }

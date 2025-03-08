@@ -3,6 +3,7 @@ import Navbar from "../../components/navbar"
 import "../../assets/style/styleHome.css"
 import "../../assets/style/styleHomeContainerImgTxt.css"
 import { Link } from "react-router-dom";
+import AnimatedOnScroll from "../../components/Animation";
 
 const Home =({}) => {
 
@@ -15,15 +16,21 @@ const Home =({}) => {
             <div className="all-intro">
             <div className='seasonal intro'>
 
+            
             <div className="container-img-txt">
+            <AnimatedOnScroll repeat={false} duration={2} children={
                 <div className="container-img-txt-image">
                     <img src="./coockies.PNG" alt="Illustration Podcast"/>
                 </div>
+            }/>
                 <div className="container-img-txt-text">
+                <AnimatedOnScroll repeat={false} duration={1} children={
                     <div className="container-img-txt-left">
                         <h1>Atelier Dharma</h1>
                         <p>Bienvenue dans mon univers gourmand !</p>
                     </div>
+                }/>
+                <AnimatedOnScroll repeat={false} duration={3} children={
                     <div className="container-img-txt-right">
                         <p>
                         Depuis toute petite, la pâtisserie est pour moi une véritable passion. 
@@ -32,6 +39,7 @@ const Home =({}) => {
                             Aujourd'hui, je partage avec vous mes créations artisanales, réalisées avec amour et des ingrédients naturels, principalement issus de producteurs français.
                         </p>
                     </div>
+                }/>
                 </div>
             </div>
                 
