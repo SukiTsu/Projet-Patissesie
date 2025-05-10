@@ -4,10 +4,11 @@ import "../../assets/style/styleHome.css"
 import "../../assets/style/styleHomeContainerImgTxt.css"
 import { Link } from "react-router-dom";
 import AnimatedOnScroll from "../../components/Animation";
+import getLongLivedToken from "../dev/dev";
 
 const Home =({}) => {
 
-    //getLongLivedToken("EAAMxJHI6qfABOZC6zSGXgjBAQqgg3v7a0yFI00AlG0IVsLW3v1y9R4vlCJIEVwYnZB5ShIzDGAZAiBBoGa0iHAprbUDJIAKzNLw1SKJPZBIQATFGpAR6y2qztl3PjrWnTrfJaF0FI1KcAt9ZBpfCKyofQFgHULxUuZAjRV85x3TDxqnNZBak9pVVmv1v6fiZB0IWR4PiU0iuPsUNqlxqOXpqowbSoCsjajKkeyoqlWKqYJtjLng0fZB5bRyR5dEQGZAQZDZD","898457535162864","389a97304ada4edbf79998b6e72ee952")
+    //getLongLivedToken("EAAMxJHI6qfABOZCEToEtAf2rrwyxvx882tu0ZC7ZC8DqXtgWZBMp1tptxWKgJN7qNZC8YcuyTJi3dD9jiZAZAQSDQg4k8MVysJJpHWIq79exRc4fpc90MAaDWmKV7uTVS0ZArJxiGaauxT4TLZAJGCRRVZBm3TFBDNqHNinKMVYeprjY2HjdogSz1hmxDj6SkMD9f9nesa6RWR5zMvfo97vY71pkrbxCZChnrcRNCdq58CZB0dHFakG06ZAUEqBeZAhpEJBOkZD","898457535162864","389a97304ada4edbf79998b6e72ee952")
 
   
     return(

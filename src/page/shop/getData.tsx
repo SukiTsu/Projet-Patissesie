@@ -2,7 +2,7 @@ import { ClassCake } from '../../classCake'
 import { extractAndRemoveHashtagsAndBrackets } from './extractWord'
 import { useEffect, useState } from 'react'
 
-const token = "EAAMxJHI6qfABOzHZABIm4aNQVzh4bquOO3d6FRWtlqWn4tUUS9pZA1xdx8yRagMxZAX7NwmzijtY6vE6iVEDplUzzzJhdEEAmepuZBJ0ZB2t8FnGX7Ti8mvEGjPQv2zG3rtZAMwVfkOu5uhnmizzZCGDvPe4cThvGjerzjlhSCzVYMfum8q3NRK0v6d"
+const token = "EAAMxJHI6qfABOZCGLQySANRZC9Niqj6ZCORQZA4b4pDETkdimSpLoTLv3kaUw7x8kHzLqIFEA8omx90VEnEb0OzitjxCMktsuMod8EtdlWWBa6sWnapHEekXzeM4nMcVAkCCpP8oNsg1I6pl0QL0Q5HaA4S68pVDZCBjNlDmmJfMl3EtgzKUv"
 const url = `https://graph.facebook.com/v21.0/122096825252577148?fields=id%2Cposts.limit(100)%7Bmessage%2Cfull_picture%7D&access_token=${token}`
 
 export class CategoryManager {
