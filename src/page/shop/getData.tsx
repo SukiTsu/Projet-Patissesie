@@ -2,8 +2,7 @@ import { ClassCake } from '../../classCake'
 import { extractAndRemoveHashtagsAndBrackets } from './extractWord'
 import { useEffect, useState } from 'react'
 
-const token = "EAAMxJHI6qfABOZCGLQySANRZC9Niqj6ZCORQZA4b4pDETkdimSpLoTLv3kaUw7x8kHzLqIFEA8omx90VEnEb0OzitjxCMktsuMod8EtdlWWBa6sWnapHEekXzeM4nMcVAkCCpP8oNsg1I6pl0QL0Q5HaA4S68pVDZCBjNlDmmJfMl3EtgzKUv"
-const url = `https://graph.facebook.com/v21.0/122096825252577148?fields=id%2Cposts.limit(100)%7Bmessage%2Cfull_picture%7D&access_token=${token}`
+const url = `https://graph.facebook.com/v21.0/122096825252577148?fields=id%2Cposts.limit(100)%7Bmessage%2Cfull_picture%7D&access_token=${import.meta.env.VITE_TOKEN}`
 
 export class CategoryManager {
   listCake: ClassCake[] = [];
@@ -31,7 +30,7 @@ export class CategoryManager {
       //console.log("shearch: ", token)
       if (!response.ok) {
         if (response.status === 400) {
-          throw new Error(`Erreur 400: Ressource non trouvée à l'URL ${token}`);
+          throw new Error(`Erreur 400: Ressource non trouvée à l'URL ${import.meta.env.VITE_TOKEN}`);
         } else {
           throw new Error(`Erreur: ${response.status} - ${response.statusText}`);
         }

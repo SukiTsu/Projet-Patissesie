@@ -87,7 +87,7 @@ const Shop =({}) => {
       if (valueSearchBar && listCakeSearch.length > 0) {
         let tempCake = [];
         for (const cake of listCakeSearch) {
-          tempCake.push(<ContainerCake cake={cake} />);
+          tempCake.push(<ContainerCake cake={cake} key={cake.title}/>);
         }
         setListContainer(tempCake);
       } else {
