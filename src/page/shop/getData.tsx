@@ -30,7 +30,7 @@ export class CategoryManager {
       //console.log("shearch: ", token)
       if (!response.ok) {
         if (response.status === 400) {
-          throw new Error(`Erreur 400: Ressource non trouvée à l'URL ${import.meta.env.VITE_TOKEN}`);
+          throw new Error(`Erreur 400: Ressource non trouvée à l'URL`);
         } else {
           throw new Error(`Erreur: ${response.status} - ${response.statusText}`);
         }
